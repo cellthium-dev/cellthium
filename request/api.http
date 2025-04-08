@@ -1,0 +1,34 @@
+### [POST] token
+POST http://localhost:9000/auth/user/emailpass
+Content-Type: application/json
+
+{"email": "cellthium.dev@gmail.com", "password": "Test1234"}
+
+### [GET] order confirmation notification
+GET http://localhost:9000/store/order-confirmation
+x-publishable-api-key: pk_38da8816bfcce95d980ceb29e3a30c4909234c1249e6c2dbb519096f17e5660b
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY3Rvcl9pZCI6InVzZXJfMDFKTVdURkEwM1NEVzBKUFI5U1Q2UUVDSFQiLCJhY3Rvcl90eXBlIjoidXNlciIsImF1dGhfaWRlbnRpdHlfaWQiOiJhdXRoaWRfMDFKTVdURjlUSlFCNDBFVEdGUzRKMEcyRjAiLCJhcHBfbWV0YWRhdGEiOnsidXNlcl9pZCI6InVzZXJfMDFKTVdURkEwM1NEVzBKUFI5U1Q2UUVDSFQifSwiaWF0IjoxNzQwNDc3NjYwLCJleHAiOjE3NDA1NjQwNjB9.35cRi1f5WoLuQq1Ovz0j6_rBIJWW0kDh9cFP0ieUJEE
+
+### [GET] reset password notification
+GET http://localhost:9000/store/reset-password
+x-publishable-api-key: pk_38da8816bfcce95d980ceb29e3a30c4909234c1249e6c2dbb519096f17e5660b
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY3Rvcl9pZCI6InVzZXJfMDFKTVdURkEwM1NEVzBKUFI5U1Q2UUVDSFQiLCJhY3Rvcl90eXBlIjoidXNlciIsImF1dGhfaWRlbnRpdHlfaWQiOiJhdXRoaWRfMDFKTVdURjlUSlFCNDBFVEdGUzRKMEcyRjAiLCJhcHBfbWV0YWRhdGEiOnsidXNlcl9pZCI6InVzZXJfMDFKTVdURkEwM1NEVzBKUFI5U1Q2UUVDSFQifSwiaWF0IjoxNzQwNDc3NjYwLCJleHAiOjE3NDA1NjQwNjB9.35cRi1f5WoLuQq1Ovz0j6_rBIJWW0kDh9cFP0ieUJEE
+
+### [GET] google oauth
+GET http://localhost:9000/auth/customer/google
+
+### [GET] validation callback 
+POST http://localhost:9000/store/auth/google
+x-publishable-api-key: pk_38da8816bfcce95d980ceb29e3a30c4909234c1249e6c2dbb519096f17e5660b
+
+### [GET] medusa - validation callback
+POST http://localhost:9000/auth/customer/google/callback?code=123
+Content-Type: application/json
+
+{
+  "code": "", 
+  "state": ""
+}
+
+### [GET] provider identity
+GET http://localhost:9000/auth/google?auth_identity_id=authid_01JN1S0J4EAHMC3HA3K6K45BND
