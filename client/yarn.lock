@@ -6763,3 +6763,8 @@ zsa@*, zsa@^0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/zsa/-/zsa-0.6.0.tgz#82800d2b177c82fde3129b0e54bf510b87fbfbb7"
   integrity sha512-Pq3X4T0dna5s4dIevYOJiRdM3DUHRvEHS2q1AH/bvkPSh640u+9veVj5zmzmbL0A6cpXMYagwKsR4keGOc0jPQ==
+
+zustand@^5.0.3:
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/zustand/-/zustand-5.0.3.tgz#b323435b73d06b2512e93c77239634374b0e407f"
+  integrity sha512-14fwWQtU3pH4dE0dOpdMiWjddcH+QzKIgk1cl8epwSE7yag43k/AD/m4L6+K7DytAOr9gGBe3/EXj9g7cdostg==
