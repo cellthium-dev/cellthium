@@ -9,8 +9,7 @@ LABEL fly_launch_runtime="Next.js"
 WORKDIR /app
 ENV NODE_ENV="production"
 ARG YARN_VERSION=1.22.19
-RUN corepack enable && \
-    yarn set version ${YARN_VERSION}
+RUN npm install -g yarn@$YARN_VERSION --force
 
 # stage 2: build image
 FROM base AS build
@@ -27,9 +26,11 @@ RUN npx next build --experimental-build-mode compile
 # remove development dependencies
 RUN yarn install --frozen-lockfile --production=true
 
-# stage 3: final image 
+# stage 3: final image
 FROM base AS runner
 # copy built application
-COPY --from=build /app /app
+COPY --from=build /app/.next/standalone /app
+COPY --from=build /app/.next/static /app/.next/static
+COPY --from=build /app/public /app/public
 EXPOSE 3000
-CMD [ "yarn", "run", "start" ]
+CMD [ "node", "server.js" ]
