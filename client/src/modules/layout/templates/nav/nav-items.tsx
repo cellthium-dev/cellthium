@@ -38,7 +38,7 @@ export default function NavItems() {
       <NavigationMenu>
         <NavigationMenuList className="lg:flex lg:gap-x-8">
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="uppercase">
+            <NavigationMenuTrigger className="uppercase ">
               About us
             </NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -59,11 +59,11 @@ export default function NavItems() {
                     </a>
                   </NavigationMenuLink>
                 </li>
-                <ListItem href="" title="Introduction">
-                  A little introduction about Cellthium.
+                <ListItem href="/about-us" title="Our Mission">
+                  A little introduction about Cellthium's mission.
                 </ListItem>
-                <ListItem href="" title="Key values">
-                  Our key values for Cellthium.
+                <ListItem href="/application" title="Applications">
+                  Applications of our batteries.
                 </ListItem>
               </ul>
             </NavigationMenuContent>
@@ -126,13 +126,13 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground group",
             className
           )}
           {...props}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground group-hover:text-apple-100">
             {children}
           </p>
         </a>
