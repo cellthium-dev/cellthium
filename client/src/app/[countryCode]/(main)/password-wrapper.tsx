@@ -3,7 +3,6 @@
 import MaxWidthWrapper from "@/_components/max-width-wrapper"
 import useAuthentication from "@lib/hooks/use-auth"
 import { Button, Input, toast } from "@medusajs/ui"
-import CircleBackground from "@modules/animation/circle-background"
 import AboutUs from "@modules/home/components/about-us"
 import Hero from "@modules/home/components/hero"
 import ReactLenis from "lenis/dist/lenis-react"
@@ -45,16 +44,6 @@ export default function PasswordWrapper() {
         </div>
       ) : (
         <ReactLenis root>
-          <div className="relative inset-0 -z-10 overflow-x-clip">
-            <CircleBackground
-              r={80}
-              blur
-              className={
-                "bg-gradient-to-r from-[#0172AF] to-[#74FEBD] mix-blend-lighten"
-              }
-            />
-          </div>
-
           <MaxWidthWrapper>
             <Hero />
             <AboutUs />
