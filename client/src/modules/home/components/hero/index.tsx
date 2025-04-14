@@ -26,7 +26,7 @@ export default function Hero() {
             </div>
           </div>
           <div className="text-center">
-            <h1 className="text-5xl font-normal tracking-tight text-gray-900">
+            <h1 className="text-5xl font-normal tracking-tight">
               Modular and highly customizeable{" "}
               <span className="font-mono bg-green-400">green</span> batteries
               for the blue planet.
