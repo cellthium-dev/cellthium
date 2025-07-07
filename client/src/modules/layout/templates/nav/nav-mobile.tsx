@@ -1,34 +1,34 @@
-"use client";
+"use client"
 
-import { Menu, X } from "lucide-react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import React from "react";
-import { PRODUCT_CATEGORIES } from "./shared";
+import { Menu, X } from "lucide-react"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import React from "react"
+import { PRODUCT_CATEGORIES } from "./shared"
 
 export default function NavMobile() {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
+  const [isOpen, setIsOpen] = React.useState<boolean>(false)
 
-  const pathname = usePathname();
+  const pathname = usePathname()
 
   // whenever we click an item in the menu and navigate away, we want to close the menu
   React.useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
+    setIsOpen(false)
+  }, [pathname])
 
   // when we click the path we are currently on, we still want the mobile menu to close,
   // however we cant rely on the pathname for it because that won't change (we're already there)
   const closeOnCurrent = (href: string) => {
     if (pathname === href) {
-      setIsOpen(false);
+      setIsOpen(false)
     }
-  };
+  }
 
   // remove second scrollbar when mobile menu is open
   React.useEffect(() => {
-    if (isOpen) document.body.classList.add("overflow-hidden");
-    else document.body.classList.remove("overflow-hidden");
-  }, [isOpen]);
+    if (isOpen) document.body.classList.add("overflow-hidden")
+    else document.body.classList.remove("overflow-hidden")
+  }, [isOpen])
 
   if (!isOpen)
     return (
@@ -39,7 +39,7 @@ export default function NavMobile() {
       >
         <Menu className="h-6 w-6" aria-hidden="true" />
       </button>
-    );
+    )
 
   return (
     <div>
@@ -63,7 +63,10 @@ export default function NavMobile() {
             <div className="mt-2">
               <ul>
                 {PRODUCT_CATEGORIES.map((category) => (
-                  <li key={category.label} className="space-y-10 px-4 pb-8 pt-10">
+                  <li
+                    key={category.label}
+                    className="space-y-10 px-4 pb-8 pt-10"
+                  >
                     <div className="border-b border-gray-200">
                       <div className="-mb-px flex">
                         <p className="flex-1 whitespace-nowrap border-b-2 border-transparent py-4 text-base font-medium text-gray-900">
@@ -118,5 +121,5 @@ export default function NavMobile() {
         </div>
       </div>
     </div>
-  );
+  )
 }

@@ -1,7 +1,7 @@
 import { listProducts } from "@lib/data/products"
 import { getRegion, listRegions } from "@lib/data/regions"
 import ProductTemplate from "@modules/products/templates"
-import { Metadata } from "next"
+import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
 type Props = {
@@ -11,7 +11,7 @@ type Props = {
 export async function generateStaticParams() {
   try {
     const countryCodes = await listRegions().then((regions) =>
-      regions?.map((r) => r.countries?.map((c) => c.iso_2)).flat()
+      regions?.flatMap((r) => r.countries?.map((c) => c.iso_2))
     )
 
     if (!countryCodes) {
@@ -24,13 +24,12 @@ export async function generateStaticParams() {
     }).then(({ response }) => response.products)
 
     return countryCodes
-      .map((countryCode) =>
+      .flatMap((countryCode) =>
         products.map((product) => ({
           countryCode,
           handle: product.handle,
         }))
       )
-      .flat()
       .filter((param) => param.handle)
   } catch (error) {
     console.error(

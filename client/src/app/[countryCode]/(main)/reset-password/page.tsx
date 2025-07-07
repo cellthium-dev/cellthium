@@ -1,7 +1,5 @@
 "use client"
 
-import { Button, buttonVariants } from "@/_components/ui/button"
-
 import { resetPassword, resetPasswordToken } from "@lib/data/customer"
 import { toast } from "@medusajs/ui"
 import Banner from "@modules/common/components/banner"
@@ -10,6 +8,7 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 import { Loader } from "lucide-react"
 import { useSearchParams } from "next/navigation"
 import { useServerAction } from "zsa-react"
+import { Button, buttonVariants } from "@/_components/ui/button"
 import useRedirectWithCounter from "./useCounter"
 
 type TResetPasswordParams = {

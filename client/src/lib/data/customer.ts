@@ -2,8 +2,8 @@
 
 import { sdk } from "@lib/config"
 import medusaError from "@lib/util/medusa-error"
-import { TActionResponse } from "@lib/validators/action"
-import { HttpTypes } from "@medusajs/types"
+import type { TActionResponse } from "@lib/validators/action"
+import type { HttpTypes } from "@medusajs/types"
 import { HttpStatusCode } from "axios"
 import { revalidateTag } from "next/cache"
 import { decodeToken } from "react-jwt"
@@ -391,7 +391,7 @@ export const handleGoogleOAuthCallback = createServerAction()
        */
 
       /** send callback to backend for auth token. */
-      let token = await sdk.auth.callback("customer", "google", {
+      const token = await sdk.auth.callback("customer", "google", {
         code: input.code,
         state: input.state,
       })

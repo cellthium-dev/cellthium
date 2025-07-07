@@ -1,5 +1,8 @@
 "use client"
 
+import { cn } from "@lib/utils"
+import Link from "next/link"
+import React from "react"
 import { Icons } from "@/_components/icons"
 import {
   NavigationMenu,
@@ -10,35 +13,37 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/_components/ui/navigation-menu"
-import { cn } from "@lib/utils"
-import Link from "next/link"
-import React from "react"
 
 const products: { title: string; href: string; description: string }[] = [
   {
-    title: "Battery",
-    href: "/products?category=battery",
-    description: "Individual battery solution for your needs.",
+    title: "Kit - Bluebox 454 Power",
+    href: "/products/bluebox454",
+    description: "Individual battery kit solution for your needs.",
   },
   {
-    title: "Battery Kit",
-    href: "/products?category=battery_kit",
-    description: "All in one battery solution for your device.",
+    title: "Kit - Bluebox 569 Power",
+    href: "/products/bluebox569",
+    description: "Individual battery kit solution for your needs.",
   },
   {
-    title: "Power Station Kit",
-    href: "/products?category=powerstation_kit",
-    description: "All in one solution for your power station.",
+    title: "Kit - Bluebox 619 Energy",
+    href: "/products/bluebox619",
+    description: "Individual battery kit solution for your needs.",
+  },
+  {
+    title: "Kit - Bluebox 774 Energy",
+    href: "/products/bluebox774",
+    description: "Individual battery kit solution for your needs.",
   },
 ]
 
 export default function NavItems() {
   return (
-    <div className="flex h-full items-center uppercase">
+    <div className="flex h-full items-center uppercase text-[#023B5E]">
       <NavigationMenu>
-        <NavigationMenuList className="lg:flex lg:gap-x-8">
+        <NavigationMenuList className="lg:flex lg:gap-x-8 ">
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="uppercase ">
+            <NavigationMenuTrigger className="uppercase">
               About us
             </NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -73,7 +78,7 @@ export default function NavItems() {
               Products
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                 {products.map((component) => (
                   <ListItem
                     key={component.title}
@@ -132,7 +137,7 @@ const ListItem = React.forwardRef<
           {...props}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground group-hover:text-apple-100">
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground group-hover:text-blue-200">
             {children}
           </p>
         </a>

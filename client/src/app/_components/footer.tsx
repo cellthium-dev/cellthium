@@ -1,14 +1,13 @@
-"use client";
+"use client"
 
-import { usePathname } from "next/navigation";
-
-import Link from "next/link";
-import { Icons } from "./icons";
-import MaxWidthWrapper from "./max-width-wrapper";
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { Icons } from "./icons"
+import MaxWidthWrapper from "./max-width-wrapper"
 
 export default function Footer() {
-  const pathname = usePathname();
-  const pathsToMinimize = ["/verify-email", "/sign-up", "/sign-in"];
+  const pathname = usePathname()
+  const pathsToMinimize = ["/verify-email", "/sign-up", "/sign-in"]
 
   return (
     <footer className="bg-white flex-grow-0">
@@ -32,13 +31,28 @@ export default function Footer() {
 
           <div className="mt-4 flex items-center justify-center md:mt-0">
             <div className="flex space-x-8">
-              <Link href="#" className="text-sm text-muted-foreground hover:text-gray-600">
-                Terms
+              <Link
+                href="/terms-of-service"
+                className="text-sm text-muted-foreground hover:text-gray-600"
+              >
+                Terms of Service
               </Link>
-              <Link href="#" className="text-sm text-muted-foreground hover:text-gray-600">
+              <Link
+                href="/terms-of-use"
+                className="text-sm text-muted-foreground hover:text-gray-600"
+              >
+                Terms of Use
+              </Link>
+              <Link
+                href="#"
+                className="text-sm text-muted-foreground hover:text-gray-600"
+              >
                 Privacy Policy
               </Link>
-              <Link href="#" className="text-sm text-muted-foreground hover:text-gray-600">
+              <Link
+                href="#"
+                className="text-sm text-muted-foreground hover:text-gray-600"
+              >
                 Cookie Policy
               </Link>
             </div>
@@ -46,5 +60,5 @@ export default function Footer() {
         </div>
       </MaxWidthWrapper>
     </footer>
-  );
+  )
 }

@@ -1,5 +1,5 @@
-import { type LucideProps } from "lucide-react";
-import React from "react";
+import type { LucideProps } from "lucide-react"
+import React from "react"
 
 export const Icons = {
   logo: (props: LucideProps) => (
@@ -126,4 +126,4 @@ export const Icons = {
       </g>
     </svg>
   ),
-};
+}

@@ -1,12 +1,12 @@
 "use client"
 
-import MaxWidthWrapper from "@/_components/max-width-wrapper"
 import useAuthentication from "@lib/hooks/use-auth"
 import { Button, Input, toast } from "@medusajs/ui"
 import AboutUs from "@modules/home/components/about-us"
 import Hero from "@modules/home/components/hero"
 import ReactLenis from "lenis/dist/lenis-react"
 import React from "react"
+import MaxWidthWrapper from "@/_components/max-width-wrapper"
 
 const PASSWORD = "cellthium2025"
 export default function PasswordWrapper() {

@@ -1,8 +1,8 @@
 "use client"
 
 import {
-  KeyframeOptions,
   animate,
+  type KeyframeOptions,
   useInView,
   useIsomorphicLayoutEffect,
 } from "framer-motion"

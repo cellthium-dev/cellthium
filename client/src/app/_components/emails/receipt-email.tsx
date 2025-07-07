@@ -1,3 +1,4 @@
+import { formatPrice } from "@lib/utils"
 import {
   Body,
   Column,
@@ -9,14 +10,12 @@ import {
   Link,
   Preview,
   Row,
+  render,
   Section,
   Text,
-  render,
 } from "@react-email/components"
-
-import { formatPrice } from "@lib/utils"
 import { format } from "date-fns"
-import { type Product } from "payload-types"
+import type { Product } from "payload-types"
 import { getBaseUrl } from "~/trpc/shared"
 
 interface ReceiptEmailProps {

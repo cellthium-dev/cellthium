@@ -1,15 +1,13 @@
-import { Metadata } from "next"
-
-import Chat from "@/_components/chats/chat"
 import { listCartOptions, retrieveCart } from "@lib/data/cart"
 import { retrieveCustomer } from "@lib/data/customer"
 import { getBaseURL } from "@lib/util/env"
-import { StoreCartShippingOption } from "@medusajs/types"
+import type { StoreCartShippingOption } from "@medusajs/types"
 import CartMismatchBanner from "@modules/layout/components/cart-mismatch-banner"
 import NavBar from "@modules/layout/templates/nav/nav-bar"
-
-import Footer from "@/_components/footer"
 import FreeShippingPriceNudge from "@modules/shipping/components/free-shipping-price-nudge"
+import type { Metadata } from "next"
+import Chat from "@/_components/chats/chat"
+import Footer from "@/_components/footer"
 
 export const metadata: Metadata = {
   metadataBase: new URL(getBaseURL()),

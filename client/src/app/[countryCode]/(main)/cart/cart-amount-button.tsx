@@ -1,8 +1,12 @@
-import { MinusIcon, PlusIcon } from "@radix-ui/react-icons";
-import { useCart, type CartItemExtended } from "~/app/(app)/hooks/useCart";
+import { MinusIcon, PlusIcon } from "@radix-ui/react-icons"
+import { type CartItemExtended, useCart } from "~/app/(app)/hooks/useCart"
 
-export default function CartAmountButton({ product }: { product: CartItemExtended }) {
-  const { updateAmount } = useCart();
+export default function CartAmountButton({
+  product,
+}: {
+  product: CartItemExtended
+}) {
+  const { updateAmount } = useCart()
 
   return (
     <div className="flex space-x-2 items-center text-muted-foreground">
@@ -14,5 +18,5 @@ export default function CartAmountButton({ product }: { product: CartItemExtende
         <PlusIcon className="h-4 w-3" />
       </button>
     </div>
-  );
+  )
 }

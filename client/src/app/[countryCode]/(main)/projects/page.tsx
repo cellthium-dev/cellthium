@@ -1,10 +1,10 @@
+import Image from "next/image"
 import MaxWidthWrapper from "@/_components/max-width-wrapper"
 import { Separator } from "@/_components/ui/separator"
-import Image from "next/image"
 
 export default function ProjectsPage() {
   return (
-    <MaxWidthWrapper className="min-h-screen bg-blue-200 p-12 text-blue-950 space-y-24">
+    <MaxWidthWrapper className="min-h-screen p-12 space-y-24 text-[#023B5E]">
       <div className="flex space-x-8">
         <h1 className="uppercase text-6xl my-8">
           Customized Battery Modules for your{" "}
@@ -36,7 +36,7 @@ export default function ProjectsPage() {
           />
           <div>
             <h2 className="text-xl font-bold">FLEXIBLE SOLUTIONS</h2>
-            <Separator className="bg-blue-950 h-[2px]" />
+            <Separator className="bg-[#023B5E] h-[2px]" />
             <p className="mt-4">Our battery modules can be used everywhere.</p>
           </div>
         </div>
@@ -51,7 +51,7 @@ export default function ProjectsPage() {
           />
           <div>
             <h2 className="text-xl font-bold">INDIVIDUALIZED AND RELIABLE</h2>
-            <Separator className="bg-blue-950 h-[2px]" />
+            <Separator className="bg-[#023B5E] h-[2px]" />
             <p className="mt-4">
               Our solutions meet the specific needs and preferences of our
               customers.
@@ -69,7 +69,7 @@ export default function ProjectsPage() {
           />
           <div>
             <h2 className="text-xl font-bold">UNIQUE</h2>
-            <Separator className="bg-blue-950 h-[2px]" />
+            <Separator className="bg-[#023B5E] h-[2px]" />
             <p className="mt-4">
               Our products are unique and stand out from the crowd thanks to
               their special features.
@@ -84,7 +84,7 @@ export default function ProjectsPage() {
           design your 96V to 400V system. All you need to do is order your
           selected modules online, assemble them, charge them effortlessly and
           conveniently in your retrofit project, plug them together and you're
-          ready to go...
+          ready to go.
         </p>
       </div>
     </MaxWidthWrapper>

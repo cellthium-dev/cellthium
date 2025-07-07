@@ -1,16 +1,16 @@
 "use client"
 
 import { cn } from "@lib/utils"
-import { type TMessageValidator } from "@lib/validators/message"
+import type { TMessageValidator } from "@lib/validators/message"
 import { useMutation } from "@tanstack/react-query"
 import { CornerDownLeft, Loader } from "lucide-react"
 import { nanoid } from "nanoid"
 import {
+  type HTMLAttributes,
+  type SetStateAction,
   useContext,
   useRef,
   useState,
-  type HTMLAttributes,
-  type SetStateAction,
 } from "react"
 import TextareaAutosize from "react-textarea-autosize"
 import { toast } from "sonner"

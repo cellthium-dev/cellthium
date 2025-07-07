@@ -1,5 +1,5 @@
 import { CheckCircle2, CircleX, Info, TriangleAlert } from "lucide-react"
-import React from "react"
+import type React from "react"
 
 interface IBannerProps {
   readonly type: "success" | "error" | "warning" | "info"

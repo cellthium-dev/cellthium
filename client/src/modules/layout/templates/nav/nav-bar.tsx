@@ -1,4 +1,3 @@
-import { buttonVariants } from "@/_components/ui/button"
 import { retrieveCustomer } from "@lib/data/customer"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CartButton from "@modules/layout/components/cart-button"
@@ -17,11 +16,11 @@ export default async function Navbar() {
             <div className="ml-4 flex lg:ml-0">
               <LocalizedClientLink href="/">
                 <Image
-                  src={"/icons/logo.svg"}
+                  src={"/icons/logo.bmp"}
                   width={300}
                   height={100}
                   alt={"company-logo"}
-                  className="mt-6 mr-6"
+                  className="mx-6"
                 />
               </LocalizedClientLink>
             </div>
@@ -36,10 +35,7 @@ export default async function Navbar() {
               <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                 <LocalizedClientLink
                   href="/account"
-                  className={buttonVariants({
-                    variant: "ghost",
-                    className: "uppercase",
-                  })}
+                  className={"text-base uppercase text-[#023B5E]"}
                 >
                   Account
                 </LocalizedClientLink>

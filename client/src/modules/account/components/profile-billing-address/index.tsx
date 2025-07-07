@@ -1,13 +1,11 @@
 "use client"
 
-import React, { useEffect, useMemo, useActionState } from "react"
-
+import { addCustomerAddress, updateCustomerAddress } from "@lib/data/customer"
+import type { HttpTypes } from "@medusajs/types"
 import Input from "@modules/common/components/input"
 import NativeSelect from "@modules/common/components/native-select"
-
+import React, { useActionState, useEffect, useMemo } from "react"
 import AccountInfo from "../account-info"
-import { HttpTypes } from "@medusajs/types"
-import { addCustomerAddress, updateCustomerAddress } from "@lib/data/customer"
 
 type MyInformationProps = {
   customer: HttpTypes.StoreCustomer
@@ -20,14 +18,12 @@ const ProfileBillingAddress: React.FC<MyInformationProps> = ({
 }) => {
   const regionOptions = useMemo(() => {
     return (
-      regions
-        ?.map((region) => {
-          return region.countries?.map((country) => ({
-            value: country.iso_2,
-            label: country.display_name,
-          }))
-        })
-        .flat() || []
+      regions?.flatMap((region) => {
+        return region.countries?.map((country) => ({
+          value: country.iso_2,
+          label: country.display_name,
+        }))
+      }) || []
     )
   }, [regions])
 

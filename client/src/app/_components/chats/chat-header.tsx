@@ -9,5 +9,5 @@ export default function ChatHeader() {
         </div>
       </div>
     </div>
-  );
+  )
 }

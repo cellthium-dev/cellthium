@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from "zod"
 
 export const MessageValidator = z.object({
   id: z.string(),
@@ -7,9 +7,9 @@ export const MessageValidator = z.object({
   content: z.string(),
   role: z.enum(["system", "user", "assistant", "function", "data", "tool"]),
   name: z.string().optional(),
-});
+})
 
 // array validator
-export const MessageArraySchema = z.array(MessageValidator);
+export const MessageArraySchema = z.array(MessageValidator)
 
-export type TMessageValidator = z.infer<typeof MessageValidator>;
+export type TMessageValidator = z.infer<typeof MessageValidator>

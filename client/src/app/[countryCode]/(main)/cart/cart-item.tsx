@@ -1,7 +1,7 @@
 import { formatPrice } from "@lib/utils"
 import { ImageIcon, X } from "lucide-react"
 import Image from "next/image"
-import { useCart, type CartItemExtended } from "~/app/(app)/hooks/useCart"
+import { type CartItemExtended, useCart } from "~/app/(app)/hooks/useCart"
 import { PRODUCT_CATEGORIES } from "../../../../modules/layout/templates/nav/shared"
 import CartAmountButton from "./cart-amount-button"
 

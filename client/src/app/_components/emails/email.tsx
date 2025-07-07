@@ -7,20 +7,24 @@ import {
   Html,
   Img,
   Preview,
+  render,
   Section,
   Text,
-  render,
-} from "@react-email/components";
-import { getBaseUrl } from "~/trpc/shared";
+} from "@react-email/components"
 import React from "react"
+import { getBaseUrl } from "~/trpc/shared"
 
 interface EmailTemplateProps {
-  readonly actionLabel: string;
-  readonly buttonText: string;
-  readonly href: string;
+  readonly actionLabel: string
+  readonly buttonText: string
+  readonly href: string
 }
 
-export const EmailTemplate = ({ actionLabel, buttonText, href }: EmailTemplateProps) => {
+export const EmailTemplate = ({
+  actionLabel,
+  buttonText,
+  href,
+}: EmailTemplateProps) => {
   return (
     <Html>
       <Head />
@@ -36,8 +40,8 @@ export const EmailTemplate = ({ actionLabel, buttonText, href }: EmailTemplatePr
           />
           <Text style={paragraph}>Hi there,</Text>
           <Text style={paragraph}>
-            Welcome to DigitalHippo, the marketplace for high quality digital goods. Use the button
-            below to {actionLabel}.
+            Welcome to DigitalHippo, the marketplace for high quality digital
+            goods. Use the button below to {actionLabel}.
           </Text>
           <Section style={btnContainer}>
             <Button style={button} href={href}>
@@ -50,39 +54,41 @@ export const EmailTemplate = ({ actionLabel, buttonText, href }: EmailTemplatePr
             The DigitalHippo team
           </Text>
           <Hr style={hr} />
-          <Text style={footer}>If you did not request this email, you can safely ignore it.</Text>
+          <Text style={footer}>
+            If you did not request this email, you can safely ignore it.
+          </Text>
         </Container>
       </Body>
     </Html>
-  );
-};
+  )
+}
 
 export const Email = (props: EmailTemplateProps) =>
-  render(<EmailTemplate {...props} />, { pretty: true });
+  render(<EmailTemplate {...props} />, { pretty: true })
 
 const main = {
   backgroundColor: "#ffffff",
   fontFamily:
     '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
-};
+}
 
 const container = {
   margin: "0 auto",
   padding: "20px 0 48px",
-};
+}
 
 const logo = {
   margin: "0 auto",
-};
+}
 
 const paragraph = {
   fontSize: "16px",
   lineHeight: "26px",
-};
+}
 
 const btnContainer = {
   textAlign: "center" as const,
-};
+}
 
 const button = {
   padding: "12px 12px",
@@ -93,14 +99,14 @@ const button = {
   textDecoration: "none",
   textAlign: "center" as const,
   display: "block",
-};
+}
 
 const hr = {
   borderColor: "#cccccc",
   margin: "20px 0",
-};
+}
 
 const footer = {
   color: "#8898aa",
   fontSize: "12px",
-};
+}

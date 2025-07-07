@@ -1,7 +1,7 @@
 "use client"
 
 import { cn } from "@lib/utils"
-import { useContext, type HTMLAttributes } from "react"
+import { type HTMLAttributes, useContext } from "react"
 import { MessagesContext } from "./context/useMessageContext"
 import MarkdownLite from "./markdown-lite"
 

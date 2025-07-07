@@ -2,12 +2,12 @@
 
 import { Popover, PopoverPanel, Transition } from "@headlessui/react"
 import { ArrowRightMini, XMark } from "@medusajs/icons"
-import { Text, clx, useToggleState } from "@medusajs/ui"
-import { Fragment } from "react"
+import type { HttpTypes } from "@medusajs/types"
+import { clx, Text, useToggleState } from "@medusajs/ui"
 
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import { Fragment } from "react"
 import CountrySelect from "../country-select"
-import { HttpTypes } from "@medusajs/types"
 
 const SideMenuItems = {
   Home: "/",

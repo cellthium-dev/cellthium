@@ -2,7 +2,7 @@
 
 import { cn } from "@lib/utils"
 import { motion } from "framer-motion"
-import React from "react"
+import type React from "react"
 import { calculateXAxes, calculateYAxes } from "./utils"
 
 interface IRoundedBackground extends React.HTMLAttributes<HTMLDivElement> {

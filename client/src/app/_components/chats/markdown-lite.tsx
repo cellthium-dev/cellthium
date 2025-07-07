@@ -1,20 +1,20 @@
-import Link from "next/link";
-import React from "react";
+import Link from "next/link"
+import React from "react"
 
 export default function MarkdownLite({ text }: { text: string }) {
-  const linkRegex = /\[(.+?)\]\((.+?)\)/g;
-  const parts = [];
+  const linkRegex = /\[(.+?)\]\((.+?)\)/g
+  const parts = []
 
-  let lastIndex = 0;
-  let match;
+  let lastIndex = 0
+  let match
 
   while ((match = linkRegex.exec(text)) !== null) {
-    const [fullMatch, linkText, linkUrl] = match;
-    const matchStart = match.index;
-    const matchEnd = matchStart + fullMatch.length;
+    const [fullMatch, linkText, linkUrl] = match
+    const matchStart = match.index
+    const matchEnd = matchStart + fullMatch.length
 
     if (lastIndex < matchStart) {
-      parts.push(text.slice(lastIndex, matchStart));
+      parts.push(text.slice(lastIndex, matchStart))
     }
 
     parts.push(
@@ -27,13 +27,13 @@ export default function MarkdownLite({ text }: { text: string }) {
       >
         {linkText}
       </Link>
-    );
+    )
 
-    lastIndex = matchEnd;
+    lastIndex = matchEnd
   }
 
   if (lastIndex < text.length) {
-    parts.push(text.slice(lastIndex));
+    parts.push(text.slice(lastIndex))
   }
 
   return (
@@ -42,5 +42,5 @@ export default function MarkdownLite({ text }: { text: string }) {
         <React.Fragment key={i}>{part}</React.Fragment>
       ))}
     </>
-  );
+  )
 }

@@ -1,17 +1,16 @@
 "use client"
 
-import { Button } from "@/_components/ui/button"
 import { signup } from "@lib/data/customer"
 import { toast } from "@medusajs/ui"
-
 import { LOGIN_VIEW } from "@modules/account/templates/login-template"
 import { SubmitButton } from "@modules/checkout/components/submit-button"
 import Banner from "@modules/common/components/banner"
 import Input from "@modules/common/components/input"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import { Loader } from "lucide-react"
-import React from "react"
+import type React from "react"
 import { useServerAction } from "zsa-react"
+import { Button } from "@/_components/ui/button"
 
 type Props = {
   setCurrentView: (view: LOGIN_VIEW) => void

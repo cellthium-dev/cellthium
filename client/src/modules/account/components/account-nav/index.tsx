@@ -1,16 +1,15 @@
 "use client"
 
-import { ArrowRightOnRectangle } from "@medusajs/icons"
-import { clx, toast } from "@medusajs/ui"
-import { useParams, usePathname } from "next/navigation"
-
 import { signout } from "@lib/data/customer"
-import { HttpTypes } from "@medusajs/types"
+import { ArrowRightOnRectangle } from "@medusajs/icons"
+import type { HttpTypes } from "@medusajs/types"
+import { clx, toast } from "@medusajs/ui"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import ChevronDown from "@modules/common/icons/chevron-down"
 import MapPin from "@modules/common/icons/map-pin"
 import Package from "@modules/common/icons/package"
 import User from "@modules/common/icons/user"
+import { useParams, usePathname } from "next/navigation"
 import { useTransition } from "react"
 
 const AccountNav = ({

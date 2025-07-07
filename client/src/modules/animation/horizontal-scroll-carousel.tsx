@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, useScroll, useTransform } from "framer-motion"
-import { Car, Factory, LucideProps, Ship, TrainFront } from "lucide-react"
+import { Car, Factory, type LucideProps, Ship, TrainFront } from "lucide-react"
 import React from "react"
 
 type Appliance = {

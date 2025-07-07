@@ -2,7 +2,7 @@ import { getBaseURL } from "@lib/util/env"
 import { Toaster } from "@medusajs/ui"
 import { GeistMono } from "geist/font/mono"
 import { GeistSans } from "geist/font/sans"
-import { Metadata } from "next"
+import type { Metadata } from "next"
 import "styles/globals.css"
 
 export const metadata: Metadata = {

@@ -1,6 +1,6 @@
 import { listCollections } from "@lib/data/collections"
 import { getRegion } from "@lib/data/regions"
-import { Metadata } from "next"
+import type { Metadata } from "next"
 import PasswordWrapper from "./password-wrapper"
 
 export const metadata: Metadata = {

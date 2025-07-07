@@ -1,10 +1,10 @@
-import { Badge } from "@/_components/ui/badge"
 import { cn } from "@lib/utils"
 import AnimatedCounter from "@modules/animation/animated-counter"
 import HorizontalScrollCarousel from "@modules/animation/horizontal-scroll-carousel"
 import { CheckCircle, ShieldCheck, Unplug } from "lucide-react"
 import Image from "next/image"
-import React from "react"
+import type React from "react"
+import { Badge } from "@/_components/ui/badge"
 
 type AboutUsProps = React.HTMLAttributes<HTMLDivElement>
 

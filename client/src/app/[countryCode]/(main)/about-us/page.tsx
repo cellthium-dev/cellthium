@@ -1,9 +1,9 @@
-import MaxWidthWrapper from "@/_components/max-width-wrapper"
 import Image from "next/image"
+import MaxWidthWrapper from "@/_components/max-width-wrapper"
 
 export default function AboutUsPage() {
   return (
-    <MaxWidthWrapper className="min-h-screen py-24 px-12 bg-blue-200 text-blue-950 space-y-24">
+    <MaxWidthWrapper className="min-h-screen py-24 px-12 space-y-24 text-[#023B5E]">
       <div className="space-y-8">
         <h1 className="text-6xl">
           Our mission: A decarbonized future for the{" "}

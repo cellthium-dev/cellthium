@@ -1,5 +1,3 @@
-import { Button } from "@/_components/ui/button"
-import { Separator } from "@/_components/ui/separator"
 import { login, loginWithGoogle } from "@lib/data/customer"
 import { toast } from "@medusajs/ui"
 import { LOGIN_VIEW } from "@modules/account/templates/login-template"
@@ -9,9 +7,11 @@ import Input from "@modules/common/components/input"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import { Loader } from "lucide-react"
 import { redirect, useRouter } from "next/navigation"
-import React from "react"
+import type React from "react"
 import { FaGoogle } from "react-icons/fa"
 import { useServerAction } from "zsa-react"
+import { Button } from "@/_components/ui/button"
+import { Separator } from "@/_components/ui/separator"
 
 type Props = {
   setCurrentView: (view: LOGIN_VIEW) => void

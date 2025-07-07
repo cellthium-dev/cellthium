@@ -1,6 +1,5 @@
-import React from "react"
-
-import { HttpTypes } from "@medusajs/types"
+import type { HttpTypes } from "@medusajs/types"
+import type React from "react"
 import AccountNav from "../components/account-nav"
 
 interface AccountLayoutProps {

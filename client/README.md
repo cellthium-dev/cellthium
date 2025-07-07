@@ -78,10 +78,10 @@ mv .env.template .env.local
 
 ### Install dependencies
 
-Use Yarn to install all dependencies.
+Use pnpm to install all dependencies.
 
 ```shell
-yarn
+pnpm install
 ```
 
 ### Start developing
@@ -89,7 +89,25 @@ yarn
 You are now ready to start up your project.
 
 ```shell
-yarn dev
+pnpm dev
+```
+
+### Code Quality
+
+This project uses [Biome](https://biomejs.dev/) for linting and formatting instead of ESLint and Prettier.
+
+```shell
+# Check for issues
+pnpm check
+
+# Format code
+pnpm format
+
+# Lint code
+pnpm lint
+
+# Fix issues automatically
+pnpm check:fix
 ```
 
 ### Open the code and start customizing
