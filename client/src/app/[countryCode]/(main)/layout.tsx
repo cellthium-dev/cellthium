@@ -1,41 +1,41 @@
-import { listCartOptions, retrieveCart } from "@lib/data/cart"
-import { retrieveCustomer } from "@lib/data/customer"
-import { getBaseURL } from "@lib/util/env"
-import type { StoreCartShippingOption } from "@medusajs/types"
-import CartMismatchBanner from "@modules/layout/components/cart-mismatch-banner"
-import NavBar from "@modules/layout/templates/nav/nav-bar"
-import FreeShippingPriceNudge from "@modules/shipping/components/free-shipping-price-nudge"
-import type { Metadata } from "next"
-import Chat from "@/_components/chats/chat"
-import Footer from "@/_components/footer"
+import { listCartOptions, retrieveCart } from '@lib/data/cart';
+import { retrieveCustomer } from '@lib/data/customer';
+import { getBaseURL } from '@lib/util/env';
+import type { StoreCartShippingOption } from '@medusajs/types';
+import CartMismatchBanner from '@modules/layout/components/cart-mismatch-banner';
+import NavBar from '@modules/layout/templates/nav/nav-bar';
+import FreeShippingPriceNudge from '@modules/shipping/components/free-shipping-price-nudge';
+import type { Metadata } from 'next';
+import Chat from '@/_components/chats/chat';
+import Footer from '@/_components/footer';
 
 export const metadata: Metadata = {
   metadataBase: new URL(getBaseURL()),
-}
+};
 
 export default async function PageLayout(props: { children: React.ReactNode }) {
-  const customer = await retrieveCustomer()
-  const cart = await retrieveCart()
-  let shippingOptions: StoreCartShippingOption[] = []
+  const customer = await retrieveCustomer();
+  const cart = await retrieveCart();
+  let shippingOptions: StoreCartShippingOption[] = [];
 
   if (cart) {
-    const { shipping_options } = await listCartOptions()
+    const { shipping_options } = await listCartOptions();
 
-    shippingOptions = shipping_options
+    shippingOptions = shipping_options;
   }
 
   return (
     <>
       <NavBar />
       {customer && cart && (
-        <CartMismatchBanner customer={customer} cart={cart} />
+        <CartMismatchBanner cart={cart} customer={customer} />
       )}
 
       {cart && (
         <FreeShippingPriceNudge
-          variant="popup"
           cart={cart}
           shippingOptions={shippingOptions}
+          variant="popup"
         />
       )}
       {props.children}
@@ -43,5 +43,5 @@ export default async function PageLayout(props: { children: React.ReactNode }) {
       <Chat />
       <Footer />
     </>
-  )
+  );
 }

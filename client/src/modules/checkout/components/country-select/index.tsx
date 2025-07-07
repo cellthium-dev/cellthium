@@ -1,39 +1,39 @@
-import type { HttpTypes } from "@medusajs/types"
+import type { HttpTypes } from '@medusajs/types';
 
 import NativeSelect, {
   type NativeSelectProps,
-} from "@modules/common/components/native-select"
-import { forwardRef, useImperativeHandle, useMemo, useRef } from "react"
+} from '@modules/common/components/native-select';
+import { forwardRef, useImperativeHandle, useMemo, useRef } from 'react';
 
 const CountrySelect = forwardRef<
   HTMLSelectElement,
   NativeSelectProps & {
-    region?: HttpTypes.StoreRegion
+    region?: HttpTypes.StoreRegion;
   }
->(({ placeholder = "Country", region, defaultValue, ...props }, ref) => {
-  const innerRef = useRef<HTMLSelectElement>(null)
+>(({ placeholder = 'Country', region, defaultValue, ...props }, ref) => {
+  const innerRef = useRef<HTMLSelectElement>(null);
 
   useImperativeHandle<HTMLSelectElement | null, HTMLSelectElement | null>(
     ref,
     () => innerRef.current
-  )
+  );
 
   const countryOptions = useMemo(() => {
     if (!region) {
-      return []
+      return [];
     }
 
     return region.countries?.map((country) => ({
       value: country.iso_2,
       label: country.display_name,
-    }))
-  }, [region])
+    }));
+  }, [region]);
 
   return (
     <NativeSelect
-      ref={innerRef}
-      placeholder={placeholder}
       defaultValue={defaultValue}
+      placeholder={placeholder}
+      ref={innerRef}
       {...props}
     >
       {countryOptions?.map(({ value, label }, index) => (
@@ -42,9 +42,9 @@ const CountrySelect = forwardRef<
         </option>
       ))}
     </NativeSelect>
-  )
-})
+  );
+});
 
-CountrySelect.displayName = "CountrySelect"
+CountrySelect.displayName = 'CountrySelect';
 
-export default CountrySelect
+export default CountrySelect;

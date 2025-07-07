@@ -10,14 +10,14 @@ import {
   render,
   Section,
   Text,
-} from "@react-email/components"
-import React from "react"
-import { getBaseUrl } from "~/trpc/shared"
+} from '@react-email/components';
+import React from 'react';
+import { getBaseUrl } from '~/trpc/shared';
 
 interface EmailTemplateProps {
-  readonly actionLabel: string
-  readonly buttonText: string
-  readonly href: string
+  readonly actionLabel: string;
+  readonly buttonText: string;
+  readonly href: string;
 }
 
 export const EmailTemplate = ({
@@ -32,11 +32,11 @@ export const EmailTemplate = ({
       <Body style={main}>
         <Container style={container}>
           <Img
-            src={`${getBaseUrl()}/hippo-newsletter-sign-up.png`}
-            width="150"
-            height="150"
             alt="DigitalHippo"
+            height="150"
+            src={`${getBaseUrl()}/hippo-newsletter-sign-up.png`}
             style={logo}
+            width="150"
           />
           <Text style={paragraph}>Hi there,</Text>
           <Text style={paragraph}>
@@ -44,7 +44,7 @@ export const EmailTemplate = ({
             goods. Use the button below to {actionLabel}.
           </Text>
           <Section style={btnContainer}>
-            <Button style={button} href={href}>
+            <Button href={href} style={button}>
               {buttonText}
             </Button>
           </Section>
@@ -60,53 +60,53 @@ export const EmailTemplate = ({
         </Container>
       </Body>
     </Html>
-  )
-}
+  );
+};
 
 export const Email = (props: EmailTemplateProps) =>
-  render(<EmailTemplate {...props} />, { pretty: true })
+  render(<EmailTemplate {...props} />, { pretty: true });
 
 const main = {
-  backgroundColor: "#ffffff",
+  backgroundColor: '#ffffff',
   fontFamily:
     '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
-}
+};
 
 const container = {
-  margin: "0 auto",
-  padding: "20px 0 48px",
-}
+  margin: '0 auto',
+  padding: '20px 0 48px',
+};
 
 const logo = {
-  margin: "0 auto",
-}
+  margin: '0 auto',
+};
 
 const paragraph = {
-  fontSize: "16px",
-  lineHeight: "26px",
-}
+  fontSize: '16px',
+  lineHeight: '26px',
+};
 
 const btnContainer = {
-  textAlign: "center" as const,
-}
+  textAlign: 'center' as const,
+};
 
 const button = {
-  padding: "12px 12px",
-  backgroundColor: "#2563eb",
-  borderRadius: "3px",
-  color: "#fff",
-  fontSize: "16px",
-  textDecoration: "none",
-  textAlign: "center" as const,
-  display: "block",
-}
+  padding: '12px 12px',
+  backgroundColor: '#2563eb',
+  borderRadius: '3px',
+  color: '#fff',
+  fontSize: '16px',
+  textDecoration: 'none',
+  textAlign: 'center' as const,
+  display: 'block',
+};
 
 const hr = {
-  borderColor: "#cccccc",
-  margin: "20px 0",
-}
+  borderColor: '#cccccc',
+  margin: '20px 0',
+};
 
 const footer = {
-  color: "#8898aa",
-  fontSize: "12px",
-}
+  color: '#8898aa',
+  fontSize: '12px',
+};

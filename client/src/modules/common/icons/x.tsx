@@ -1,37 +1,37 @@
-import type React from "react"
+import type React from 'react';
 
-import type { IconProps } from "types/icon"
+import type { IconProps } from 'types/icon';
 
 const X: React.FC<IconProps> = ({
-  size = "20",
-  color = "currentColor",
+  size = '20',
+  color = 'currentColor',
   ...attributes
 }) => {
   return (
     <svg
-      width={size}
+      fill="none"
       height={size}
       viewBox="0 0 20 20"
-      fill="none"
+      width={size}
       xmlns="http://www.w3.org/2000/svg"
       {...attributes}
     >
       <path
         d="M15 5L5 15"
         stroke={color}
-        strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
+        strokeWidth="1.5"
       />
       <path
         d="M5 5L15 15"
         stroke={color}
-        strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
+        strokeWidth="1.5"
       />
     </svg>
-  )
-}
+  );
+};
 
-export default X
+export default X;

@@ -1,19 +1,19 @@
-import Image from "next/image"
-import MaxWidthWrapper from "@/_components/max-width-wrapper"
+import Image from 'next/image';
+import MaxWidthWrapper from '@/_components/max-width-wrapper';
 
 export default function ApplicationPage() {
   return (
-    <MaxWidthWrapper className="min-h-screen  p-12 text-apple-950 space-y-24">
+    <MaxWidthWrapper className="min-h-screen space-y-24 p-12 text-apple-950">
       <Image
-        src={"/images/application.png"}
-        width={800}
-        height={600}
         alt="bmw-project"
-        className="mb-8 mx-auto"
+        className="mx-auto mb-8"
+        height={600}
+        src={'/images/application.png'}
+        width={800}
       />
 
       <div className="text-center text-7xl">
-        OUR BATTERIES ARE USED IN MANY{" "}
+        OUR BATTERIES ARE USED IN MANY{' '}
         <span className="font-bold">DIFFERENT APPLICATIONS</span>
       </div>
 
@@ -21,5 +21,5 @@ export default function ApplicationPage() {
         Whether cars, boats or as energy storage
       </p>
     </MaxWidthWrapper>
-  )
+  );
 }

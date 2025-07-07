@@ -1,27 +1,27 @@
-import { listProducts } from "@lib/data/products"
-import { getRegion, listRegions } from "@lib/data/regions"
-import ProductTemplate from "@modules/products/templates"
-import type { Metadata } from "next"
-import { notFound } from "next/navigation"
+import { listProducts } from '@lib/data/products';
+import { getRegion, listRegions } from '@lib/data/regions';
+import ProductTemplate from '@modules/products/templates';
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
 type Props = {
-  params: Promise<{ countryCode: string; handle: string }>
-}
+  params: Promise<{ countryCode: string; handle: string }>;
+};
 
 export async function generateStaticParams() {
   try {
     const countryCodes = await listRegions().then((regions) =>
       regions?.flatMap((r) => r.countries?.map((c) => c.iso_2))
-    )
+    );
 
     if (!countryCodes) {
-      return []
+      return [];
     }
 
     const products = await listProducts({
-      countryCode: "US",
-      queryParams: { fields: "handle" },
-    }).then(({ response }) => response.products)
+      countryCode: 'US',
+      queryParams: { fields: 'handle' },
+    }).then(({ response }) => response.products);
 
     return countryCodes
       .flatMap((countryCode) =>
@@ -30,34 +30,34 @@ export async function generateStaticParams() {
           handle: product.handle,
         }))
       )
-      .filter((param) => param.handle)
+      .filter((param) => param.handle);
   } catch (error) {
     console.error(
       `Failed to generate static paths for product pages: ${
-        error instanceof Error ? error.message : "Unknown error"
+        error instanceof Error ? error.message : 'Unknown error'
       }.`
-    )
-    return []
+    );
+    return [];
   }
 }
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
-  const params = await props.params
-  const { handle } = params
-  const region = await getRegion(params.countryCode)
+  const params = await props.params;
+  const { handle } = params;
+  const region = await getRegion(params.countryCode);
 
-  console.log(region)
+  console.log(region);
   if (!region) {
-    notFound()
+    notFound();
   }
 
   const product = await listProducts({
     countryCode: params.countryCode,
     queryParams: { handle },
-  }).then(({ response }) => response.products[0])
+  }).then(({ response }) => response.products[0]);
 
   if (!product) {
-    notFound()
+    notFound();
   }
 
   return {
@@ -68,28 +68,28 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       description: `${product.title}`,
       images: product.thumbnail ? [product.thumbnail] : [],
     },
-  }
+  };
 }
 
 export default async function ProductPage(props: Props) {
-  const params = await props.params
-  const region = await getRegion(params.countryCode)
-  if (!region) notFound()
+  const params = await props.params;
+  const region = await getRegion(params.countryCode);
+  if (!region) notFound();
 
   const pricedProduct = await listProducts({
     countryCode: params.countryCode,
     queryParams: { handle: params.handle },
-  }).then(({ response }) => response.products[0])
+  }).then(({ response }) => response.products[0]);
 
   if (!pricedProduct) {
-    notFound()
+    notFound();
   }
 
   return (
     <ProductTemplate
+      countryCode={params.countryCode}
       product={pricedProduct}
       region={region}
-      countryCode={params.countryCode}
     />
-  )
+  );
 }

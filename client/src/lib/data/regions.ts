@@ -1,61 +1,61 @@
-"use server"
+'use server';
 
-import { sdk } from "@lib/config"
-import medusaError from "@lib/util/medusa-error"
-import type { HttpTypes } from "@medusajs/types"
-import { getCacheOptions } from "./cookies"
+import { sdk } from '@lib/config';
+import medusaError from '@lib/util/medusa-error';
+import type { HttpTypes } from '@medusajs/types';
+import { getCacheOptions } from './cookies';
 
 export const listRegions = async () => {
   const next = {
-    ...(await getCacheOptions("regions")),
-  }
+    ...(await getCacheOptions('regions')),
+  };
 
   return sdk.client
-    .fetch<{ regions: HttpTypes.StoreRegion[] }>(`/store/regions`, {
-      method: "GET",
+    .fetch<{ regions: HttpTypes.StoreRegion[] }>('/store/regions', {
+      method: 'GET',
       next,
-      cache: "force-cache",
+      cache: 'force-cache',
     })
     .then(({ regions }) => regions)
-    .catch(medusaError)
-}
+    .catch(medusaError);
+};
 
 export const retrieveRegion = async (id: string) => {
   const next = {
-    ...(await getCacheOptions(["regions", id].join("-"))),
-  }
+    ...(await getCacheOptions(['regions', id].join('-'))),
+  };
 
   return sdk.client
     .fetch<{ region: HttpTypes.StoreRegion }>(`/store/regions/${id}`, {
-      method: "GET",
+      method: 'GET',
       next,
-      cache: "force-cache",
+      cache: 'force-cache',
     })
     .then(({ region }) => region)
-    .catch(medusaError)
-}
+    .catch(medusaError);
+};
 
-const regionMap = new Map<string, HttpTypes.StoreRegion>()
+const regionMap = new Map<string, HttpTypes.StoreRegion>();
 
 export const getRegion = async (countryCode: string) => {
   try {
-    if (regionMap.has(countryCode)) return regionMap.get(countryCode)
+    if (regionMap.has(countryCode)) return regionMap.get(countryCode);
 
-    const regions = await listRegions()
-    if (!regions) return null
+    const regions = await listRegions();
+    if (!regions) return null;
 
     regions.forEach((region) => {
       region.countries?.forEach((c) => {
-        regionMap.set(c?.iso_2 ?? "", region)
-      })
-    })
+        regionMap.set(c?.iso_2 ?? '', region);
+      });
+    });
 
     const region = countryCode
       ? regionMap.get(countryCode)
-      : regionMap.get("us")
+      : regionMap.get('us');
 
-    return region
+    return region;
   } catch (e: any) {
-    return null
+    return null;
   }
-}
+};

@@ -1,24 +1,24 @@
-import { retrieveCustomer } from "@lib/data/customer"
-import { listRegions } from "@lib/data/regions"
-import ProfilePhone from "@modules/account//components/profile-phone"
-import ProfileBillingAddress from "@modules/account/components/profile-billing-address"
-import ProfileEmail from "@modules/account/components/profile-email"
-import ProfileName from "@modules/account/components/profile-name"
-import ProfilePassword from "@modules/account/components/profile-password"
-import type { Metadata } from "next"
-import { notFound } from "next/navigation"
+import { retrieveCustomer } from '@lib/data/customer';
+import { listRegions } from '@lib/data/regions';
+import ProfilePhone from '@modules/account//components/profile-phone';
+import ProfileBillingAddress from '@modules/account/components/profile-billing-address';
+import ProfileEmail from '@modules/account/components/profile-email';
+import ProfileName from '@modules/account/components/profile-name';
+import ProfilePassword from '@modules/account/components/profile-password';
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
 export const metadata: Metadata = {
-  title: "Profile",
-  description: "View and edit your Medusa Store profile.",
-}
+  title: 'Profile',
+  description: 'View and edit your Medusa Store profile.',
+};
 
 export default async function Profile() {
-  const customer = await retrieveCustomer()
-  const regions = await listRegions()
+  const customer = await retrieveCustomer();
+  const regions = await listRegions();
 
-  if (!customer || !regions) {
-    notFound()
+  if (!(customer && regions)) {
+    notFound();
   }
 
   return (
@@ -31,7 +31,7 @@ export default async function Profile() {
           your password.
         </p>
       </div>
-      <div className="flex flex-col gap-y-8 w-full">
+      <div className="flex w-full flex-col gap-y-8">
         <ProfileName customer={customer} />
         <Divider />
         <ProfileEmail customer={customer} />
@@ -43,10 +43,10 @@ export default async function Profile() {
         <ProfileBillingAddress customer={customer} regions={regions} />
       </div>
     </div>
-  )
+  );
 }
 
 const Divider = () => {
-  return <div className="w-full h-px bg-gray-200" />
-}
-;``
+  return <div className="h-px w-full bg-gray-200" />;
+};
+('');

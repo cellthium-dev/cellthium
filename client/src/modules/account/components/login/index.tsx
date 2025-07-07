@@ -1,21 +1,21 @@
-import { login, loginWithGoogle } from "@lib/data/customer"
-import { toast } from "@medusajs/ui"
-import { LOGIN_VIEW } from "@modules/account/templates/login-template"
-import { SubmitButton } from "@modules/checkout/components/submit-button"
-import Banner from "@modules/common/components/banner"
-import Input from "@modules/common/components/input"
-import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import { Loader } from "lucide-react"
-import { redirect, useRouter } from "next/navigation"
-import type React from "react"
-import { FaGoogle } from "react-icons/fa"
-import { useServerAction } from "zsa-react"
-import { Button } from "@/_components/ui/button"
-import { Separator } from "@/_components/ui/separator"
+import { login, loginWithGoogle } from '@lib/data/customer';
+import { toast } from '@medusajs/ui';
+import { LOGIN_VIEW } from '@modules/account/templates/login-template';
+import { SubmitButton } from '@modules/checkout/components/submit-button';
+import Banner from '@modules/common/components/banner';
+import Input from '@modules/common/components/input';
+import LocalizedClientLink from '@modules/common/components/localized-client-link';
+import { Loader } from 'lucide-react';
+import { redirect, useRouter } from 'next/navigation';
+import type React from 'react';
+import { FaGoogle } from 'react-icons/fa';
+import { useServerAction } from 'zsa-react';
+import { Button } from '@/_components/ui/button';
+import { Separator } from '@/_components/ui/separator';
 
 type Props = {
-  setCurrentView: (view: LOGIN_VIEW) => void
-}
+  setCurrentView: (view: LOGIN_VIEW) => void;
+};
 
 const Login = ({ setCurrentView }: Props) => {
   const {
@@ -24,91 +24,91 @@ const Login = ({ setCurrentView }: Props) => {
     execute: onLogin,
   } = useServerAction(login, {
     onError: ({ err }) => {
-      toast.error("Login failed", { description: err.message })
+      toast.error('Login failed', { description: err.message });
     },
     onSuccess: () => {
-      toast.success("Login successful")
-      redirect("")
+      toast.success('Login successful');
+      redirect('');
     },
-  })
+  });
 
-  const router = useRouter()
+  const router = useRouter();
   const { isPending, execute } = useServerAction(loginWithGoogle, {
     onError: ({ err }) => {
-      toast.error(`Authentication failed`, { description: err.message })
+      toast.error('Authentication failed', { description: err.message });
     },
     onSuccess: ({ data }) => {
-      if (data.location) router.push(data.location)
+      if (data.location) router.push(data.location);
     },
-  })
+  });
 
   return (
     <div
-      className="max-w-sm w-full flex flex-col items-center"
+      className="flex w-full max-w-sm flex-col items-center"
       data-testid="login-page"
     >
-      <h1 className="text-large-semi uppercase mb-6">Welcome back</h1>
-      <p className="text-center text-base-regular text-ui-fg-base mb-8">
+      <h1 className="mb-6 text-large-semi uppercase">Welcome back</h1>
+      <p className="mb-8 text-center text-base-regular text-ui-fg-base">
         Sign in to access an enhanced shopping experience.
       </p>
 
-      <div className="w-full grid gap-y-2">
+      <div className="grid w-full gap-y-2">
         <form
-          className="w-full grid gap-y-4"
+          className="grid w-full gap-y-4"
           onSubmit={async (event: React.FormEvent<HTMLFormElement>) => {
-            event.preventDefault()
+            event.preventDefault();
 
-            const formData = new FormData(event.currentTarget)
-            await onLogin(formData)
+            const formData = new FormData(event.currentTarget);
+            await onLogin(formData);
           }}
         >
-          <div className="flex flex-col w-full gap-y-2">
+          <div className="flex w-full flex-col gap-y-2">
             <Input
+              autoComplete="email"
+              data-testid="email-input"
               label="Email"
               name="email"
-              type="email"
-              title="Enter a valid email address."
-              autoComplete="email"
               required
-              data-testid="email-input"
+              title="Enter a valid email address."
+              type="email"
             />
             <Input
+              autoComplete="current-password"
+              data-testid="password-input"
               label="Password"
               name="password"
-              type="password"
-              autoComplete="current-password"
               required
-              data-testid="password-input"
+              type="password"
             />
           </div>
 
           {isError ? (
             <Banner
-              type="error"
               description={error.message}
               title="Login failed."
+              type="error"
             />
           ) : null}
 
-          <SubmitButton data-testid="sign-in-button" className="w-full mt-6">
+          <SubmitButton className="mt-6 w-full" data-testid="sign-in-button">
             Sign in
           </SubmitButton>
         </form>
 
-        <div className="flex items-center w-full gap-x-4 ">
-          <Separator orientation="horizontal" className="flex-1" />
+        <div className="flex w-full items-center gap-x-4 ">
+          <Separator className="flex-1" orientation="horizontal" />
           <span className="mx-auto">or</span>
-          <Separator orientation="horizontal" className="flex-1" />
+          <Separator className="flex-1" orientation="horizontal" />
         </div>
 
         <Button
-          variant={"outline"}
-          onClick={async () => await execute()}
           disabled={isPending}
+          onClick={async () => await execute()}
+          variant={'outline'}
         >
           {isPending ? (
             <div className="flex items-center gap-2">
-              <Loader size={16} className="animate-spin" />
+              <Loader className="animate-spin" size={16} />
               <p>Logging in ...</p>
             </div>
           ) : (
@@ -120,29 +120,29 @@ const Login = ({ setCurrentView }: Props) => {
         </Button>
       </div>
 
-      <span className="text-center text-ui-fg-base text-small-regular mt-4">
-        Not a member?{" "}
+      <span className="mt-4 text-center text-small-regular text-ui-fg-base">
+        Not a member?{' '}
         <button
-          onClick={() => setCurrentView(LOGIN_VIEW.REGISTER)}
           className="underline"
           data-testid="register-button"
+          onClick={() => setCurrentView(LOGIN_VIEW.REGISTER)}
         >
           Join us
         </button>
         .
       </span>
-      <span className="text-center text-ui-fg-base text-small-regular mt-4">
-        Forgot password?{" "}
+      <span className="mt-4 text-center text-small-regular text-ui-fg-base">
+        Forgot password?{' '}
         <LocalizedClientLink
-          href="/reset-password"
           className="underline"
           data-testid="register-button"
+          href="/reset-password"
         >
           Reset
         </LocalizedClientLink>
       </span>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

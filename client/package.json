@@ -59,7 +59,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
-    "@biomejs/biome": "^2.0.6",
+    "@biomejs/biome": "2.0.6",
     "@flydotio/dockerfile": "^0.7.10",
     "@medusajs/types": "latest",
     "@medusajs/ui-preset": "latest",

@@ -1,42 +1,42 @@
-"use client"
+'use client';
 
-import { clx, Heading, Text } from "@medusajs/ui"
-import { useSearchParams } from "next/navigation"
-import PaymentButton from "../payment-button"
+import { clx, Heading, Text } from '@medusajs/ui';
+import { useSearchParams } from 'next/navigation';
+import PaymentButton from '../payment-button';
 
 const Review = ({ cart }: { cart: any }) => {
-  const searchParams = useSearchParams()
+  const searchParams = useSearchParams();
 
-  const isOpen = searchParams.get("step") === "review"
+  const isOpen = searchParams.get('step') === 'review';
 
   const paidByGiftcard =
-    cart?.gift_cards && cart?.gift_cards?.length > 0 && cart?.total === 0
+    cart?.gift_cards && cart?.gift_cards?.length > 0 && cart?.total === 0;
 
   const previousStepsCompleted =
     cart.shipping_address &&
     cart.shipping_methods.length > 0 &&
-    (cart.payment_collection || paidByGiftcard)
+    (cart.payment_collection || paidByGiftcard);
 
   return (
     <div className="bg-white">
-      <div className="flex flex-row items-center justify-between mb-6">
+      <div className="mb-6 flex flex-row items-center justify-between">
         <Heading
-          level="h2"
           className={clx(
-            "flex flex-row text-3xl-regular gap-x-2 items-baseline",
+            'flex flex-row items-baseline gap-x-2 text-3xl-regular',
             {
-              "opacity-50 pointer-events-none select-none": !isOpen,
+              'pointer-events-none select-none opacity-50': !isOpen,
             }
           )}
+          level="h2"
         >
           Review
         </Heading>
       </div>
       {isOpen && previousStepsCompleted && (
         <>
-          <div className="flex items-start gap-x-1 w-full mb-6">
+          <div className="mb-6 flex w-full items-start gap-x-1">
             <div className="w-full">
-              <Text className="txt-medium-plus text-ui-fg-base mb-1">
+              <Text className="txt-medium-plus mb-1 text-ui-fg-base">
                 By clicking the Place Order button, you confirm that you have
                 read, understand and accept our Terms of Use, Terms of Sale and
                 Returns Policy and acknowledge that you have read Medusa
@@ -48,7 +48,7 @@ const Review = ({ cart }: { cart: any }) => {
         </>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default Review
+export default Review;

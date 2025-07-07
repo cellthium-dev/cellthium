@@ -1,14 +1,14 @@
-import { Text } from "@medusajs/ui"
+import { Text } from '@medusajs/ui';
 
-import { FaStripe } from "react-icons/fa"
+import { FaStripe } from 'react-icons/fa';
 
 const MedusaCTA = () => {
   return (
-    <Text className="flex gap-x-2 txt-compact-small-plus items-center">
+    <Text className="txt-compact-small-plus flex items-center gap-x-2">
       Powered by
       <FaStripe className="text-gray-500 " size={40} />
     </Text>
-  )
-}
+  );
+};
 
-export default MedusaCTA
+export default MedusaCTA;

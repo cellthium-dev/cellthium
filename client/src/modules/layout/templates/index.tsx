@@ -1,9 +1,9 @@
-import Footer from "@modules/layout/templates/footer"
-import Nav from "@modules/layout/templates/nav"
-import type React from "react"
+import Footer from '@modules/layout/templates/footer';
+import Nav from '@modules/layout/templates/nav';
+import type React from 'react';
 
 const Layout: React.FC<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }> = ({ children }) => {
   return (
     <div>
@@ -11,7 +11,7 @@ const Layout: React.FC<{
       <main className="relative">{children}</main>
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

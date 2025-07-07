@@ -1,11 +1,11 @@
-import { retrieveCustomer } from "@lib/data/customer"
-import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import CartButton from "@modules/layout/components/cart-button"
-import Image from "next/image"
-import NavItems from "./nav-items"
+import { retrieveCustomer } from '@lib/data/customer';
+import LocalizedClientLink from '@modules/common/components/localized-client-link';
+import CartButton from '@modules/layout/components/cart-button';
+import Image from 'next/image';
+import NavItems from './nav-items';
 
 export default async function Navbar() {
-  const customer = await retrieveCustomer()
+  const customer = await retrieveCustomer();
 
   return (
     <div className="sticky inset-x-0 z-50 h-30 bg-white/80 py-6 text-apple-600">
@@ -16,11 +16,11 @@ export default async function Navbar() {
             <div className="ml-4 flex lg:ml-0">
               <LocalizedClientLink href="/">
                 <Image
-                  src={"/icons/logo.bmp"}
-                  width={300}
-                  height={100}
-                  alt={"company-logo"}
+                  alt={'company-logo'}
                   className="mx-6"
+                  height={100}
+                  src={'/icons/logo.bmp'}
+                  width={300}
                 />
               </LocalizedClientLink>
             </div>
@@ -34,8 +34,8 @@ export default async function Navbar() {
             <div className="ml-auto flex items-center">
               <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                 <LocalizedClientLink
+                  className={'text-[#023B5E] text-base uppercase'}
                   href="/account"
-                  className={"text-base uppercase text-[#023B5E]"}
                 >
                   Account
                 </LocalizedClientLink>
@@ -49,5 +49,5 @@ export default async function Navbar() {
         </div>
       </header>
     </div>
-  )
+  );
 }

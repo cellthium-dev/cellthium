@@ -1,10 +1,10 @@
-import type { HttpTypes } from "@medusajs/types"
-import { getPercentageDiff } from "./get-precentage-diff"
-import { convertToLocale } from "./money"
+import type { HttpTypes } from '@medusajs/types';
+import { getPercentageDiff } from './get-precentage-diff';
+import { convertToLocale } from './money';
 
 export const getPricesForVariant = (variant: any) => {
   if (!variant?.calculated_price?.calculated_amount) {
-    return null
+    return null;
   }
 
   return {
@@ -24,23 +24,23 @@ export const getPricesForVariant = (variant: any) => {
       variant.calculated_price.original_amount,
       variant.calculated_price.calculated_amount
     ),
-  }
-}
+  };
+};
 
 export function getProductPrice({
   product,
   variantId,
 }: {
-  product: HttpTypes.StoreProduct
-  variantId?: string
+  product: HttpTypes.StoreProduct;
+  variantId?: string;
 }) {
-  if (!product || !product.id) {
-    throw new Error("No product provided")
+  if (!(product && product.id)) {
+    throw new Error('No product provided');
   }
 
   const cheapestPrice = () => {
-    if (!product || !product.variants?.length) {
-      return null
+    if (!(product && product.variants?.length)) {
+      return null;
     }
 
     const cheapestVariant: any = product.variants
@@ -49,31 +49,31 @@ export function getProductPrice({
         return (
           a.calculated_price.calculated_amount -
           b.calculated_price.calculated_amount
-        )
-      })[0]
+        );
+      })[0];
 
-    return getPricesForVariant(cheapestVariant)
-  }
+    return getPricesForVariant(cheapestVariant);
+  };
 
   const variantPrice = () => {
-    if (!product || !variantId) {
-      return null
+    if (!(product && variantId)) {
+      return null;
     }
 
     const variant: any = product.variants?.find(
       (v) => v.id === variantId || v.sku === variantId
-    )
+    );
 
     if (!variant) {
-      return null
+      return null;
     }
 
-    return getPricesForVariant(variant)
-  }
+    return getPricesForVariant(variant);
+  };
 
   return {
     product,
     cheapestPrice: cheapestPrice(),
     variantPrice: variantPrice(),
-  }
+  };
 }

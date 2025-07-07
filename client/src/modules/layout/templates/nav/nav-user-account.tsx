@@ -1,45 +1,45 @@
-"use client"
+'use client';
 
-import type { StoreCustomer } from "@medusajs/types"
-import { useRouter } from "next/navigation"
-import { Button } from "@/_components/ui/button"
+import type { StoreCustomer } from '@medusajs/types';
+import { useRouter } from 'next/navigation';
+import { Button } from '@/_components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/_components/ui/dropdown-menu"
+} from '@/_components/ui/dropdown-menu';
 
 export default function NavUserAccount({ user }: { user: StoreCustomer }) {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild className="overflow-visible">
-        <Button variant="ghost" size="sm" className="relative">
+        <Button className="relative" size="sm" variant="ghost">
           Account
         </Button>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent className="w-60 bg-white" align="end">
+      <DropdownMenuContent align="end" className="w-60 bg-white">
         <div className="flex items-center justify-start gap-2 p-2">
           <div className="flex flex-col space-y-0.5 leading-none">
-            <p className="text-sm font-medium text-black">{user.email}</p>
+            <p className="font-medium text-black text-sm">{user.email}</p>
           </div>
         </div>
 
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={() => router.push("order-history")}>
+        <DropdownMenuItem onClick={() => router.push('order-history')}>
           Order history
         </DropdownMenuItem>
 
         <DropdownMenuItem
-          onClick={() => console.log("log out")}
           className="cursor-pointer"
+          onClick={() => console.log('log out')}
         >
           Log out
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }

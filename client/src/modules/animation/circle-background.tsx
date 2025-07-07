@@ -1,16 +1,16 @@
-"use client"
+'use client';
 
-import { cn } from "@lib/utils"
-import { motion } from "framer-motion"
-import type React from "react"
-import { calculateXAxes, calculateYAxes } from "./utils"
+import { cn } from '@lib/utils';
+import { motion } from 'framer-motion';
+import type React from 'react';
+import { calculateXAxes, calculateYAxes } from './utils';
 
 interface IRoundedBackground extends React.HTMLAttributes<HTMLDivElement> {
-  readonly r: number // radius in rem
-  readonly blur?: boolean
-  readonly delay?: number
-  readonly duration?: number
-  readonly reverse?: boolean
+  readonly r: number; // radius in rem
+  readonly blur?: boolean;
+  readonly delay?: number;
+  readonly duration?: number;
+  readonly reverse?: boolean;
 }
 
 export default function CircleBackground({
@@ -23,7 +23,6 @@ export default function CircleBackground({
 }: IRoundedBackground) {
   return (
     <motion.div
-      layout
       animate={{
         x: reverse
           ? calculateXAxes(0.01, 850, -Math.PI, Math.PI).map((x) => x * -1)
@@ -32,17 +31,18 @@ export default function CircleBackground({
           ? calculateYAxes(0.01, 850, -Math.PI, Math.PI)
           : calculateYAxes(0.01, 850, -Math.PI, Math.PI),
         transition: {
-          duration: duration,
-          repeat: Infinity,
-          delay: delay,
+          duration,
+          repeat: Number.POSITIVE_INFINITY,
+          delay,
         },
       }}
-      style={{ width: `${r}rem`, height: `${r}rem` }}
       className={cn(
-        `animate-gradient-x absolute inset-0 mx-auto rounded-full opacity-40 filter`,
+        'absolute inset-0 mx-auto animate-gradient-x rounded-full opacity-40 filter',
         className,
-        blur && "blur-3xl"
+        blur && 'blur-3xl'
       )}
+      layout
+      style={{ width: `${r}rem`, height: `${r}rem` }}
     />
-  )
+  );
 }

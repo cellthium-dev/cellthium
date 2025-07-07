@@ -1,117 +1,117 @@
-"use client"
+'use client';
 
-import { signup } from "@lib/data/customer"
-import { toast } from "@medusajs/ui"
-import { LOGIN_VIEW } from "@modules/account/templates/login-template"
-import { SubmitButton } from "@modules/checkout/components/submit-button"
-import Banner from "@modules/common/components/banner"
-import Input from "@modules/common/components/input"
-import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import { Loader } from "lucide-react"
-import type React from "react"
-import { useServerAction } from "zsa-react"
-import { Button } from "@/_components/ui/button"
+import { signup } from '@lib/data/customer';
+import { toast } from '@medusajs/ui';
+import { LOGIN_VIEW } from '@modules/account/templates/login-template';
+import { SubmitButton } from '@modules/checkout/components/submit-button';
+import Banner from '@modules/common/components/banner';
+import Input from '@modules/common/components/input';
+import LocalizedClientLink from '@modules/common/components/localized-client-link';
+import { Loader } from 'lucide-react';
+import type React from 'react';
+import { useServerAction } from 'zsa-react';
+import { Button } from '@/_components/ui/button';
 
 type Props = {
-  setCurrentView: (view: LOGIN_VIEW) => void
-}
+  setCurrentView: (view: LOGIN_VIEW) => void;
+};
 
 const Register = ({ setCurrentView }: Props) => {
   const { isPending, error, isError, execute } = useServerAction(signup, {
     onError: ({ err }) => {
-      toast.error("Registration failed", { description: err.message })
+      toast.error('Registration failed', { description: err.message });
     },
     onSuccess: ({ data }) => {
-      toast.success("Registration successful.", {
-        description: "User was registred successfully. ",
-      })
+      toast.success('Registration successful.', {
+        description: 'User was registred successfully. ',
+      });
     },
-  })
+  });
 
   return (
     <div
-      className="max-w-sm flex flex-col items-center"
+      className="flex max-w-sm flex-col items-center"
       data-testid="register-page"
     >
-      <h1 className="text-large-semi uppercase mb-6">Become a member</h1>
-      <p className="text-center text-base-regular text-ui-fg-base mb-4">
+      <h1 className="mb-6 text-large-semi uppercase">Become a member</h1>
+      <p className="mb-4 text-center text-base-regular text-ui-fg-base">
         Create your Cellthium profile and get access to an enhanced experience.
       </p>
       <form
-        className="w-full flex flex-col gap-y-4"
+        className="flex w-full flex-col gap-y-4"
         onSubmit={async (event: React.FormEvent<HTMLFormElement>) => {
-          event.preventDefault()
+          event.preventDefault();
 
-          const formData = new FormData(event.currentTarget)
+          const formData = new FormData(event.currentTarget);
           await execute({
-            email: formData.get("email") as string,
-            first_name: formData.get("first_name") as string,
-            last_name: formData.get("last_name") as string,
-            password: formData.get("password") as string,
-            phone: formData.get("phone") as string | undefined,
-          })
+            email: formData.get('email') as string,
+            first_name: formData.get('first_name') as string,
+            last_name: formData.get('last_name') as string,
+            password: formData.get('password') as string,
+            phone: formData.get('phone') as string | undefined,
+          });
         }}
       >
-        <div className="flex flex-col w-full gap-y-2">
+        <div className="flex w-full flex-col gap-y-2">
           <Input
+            autoComplete="given-name"
+            data-testid="first-name-input"
             label="First name"
             name="first_name"
             required
-            autoComplete="given-name"
-            data-testid="first-name-input"
           />
           <Input
+            autoComplete="family-name"
+            data-testid="last-name-input"
             label="Last name"
             name="last_name"
             required
-            autoComplete="family-name"
-            data-testid="last-name-input"
           />
           <Input
+            autoComplete="email"
+            data-testid="email-input"
             label="Email"
             name="email"
             required
             type="email"
-            autoComplete="email"
-            data-testid="email-input"
           />
           <Input
+            autoComplete="tel"
+            data-testid="phone-input"
             label="Phone"
             name="phone"
             type="tel"
-            autoComplete="tel"
-            data-testid="phone-input"
           />
           <Input
+            autoComplete="new-password"
+            data-testid="password-input"
             label="Password"
             name="password"
             required
             type="password"
-            autoComplete="new-password"
-            data-testid="password-input"
           />
         </div>
 
         {isError ? (
           <Banner
-            type="error"
             description={error.message}
             title="Registration failed."
+            type="error"
           />
         ) : null}
 
-        <span className="text-center text-ui-fg-base text-small-regular mt-6">
-          By creating an account, you agree to Cellthium&apos;s{" "}
+        <span className="mt-6 text-center text-small-regular text-ui-fg-base">
+          By creating an account, you agree to Cellthium&apos;s{' '}
           <LocalizedClientLink
-            href="/content/privacy-policy"
             className="underline"
+            href="/content/privacy-policy"
           >
             Privacy Policy
-          </LocalizedClientLink>{" "}
-          and{" "}
+          </LocalizedClientLink>{' '}
+          and{' '}
           <LocalizedClientLink
-            href="/content/terms-of-use"
             className="underline"
+            href="/content/terms-of-use"
           >
             Terms of Use
           </LocalizedClientLink>
@@ -119,30 +119,30 @@ const Register = ({ setCurrentView }: Props) => {
         </span>
 
         {isPending ? (
-          <Button disabled={isPending} className="w-full mt-6">
-            <div className="flex gap-x-1 items-center">
-              <Loader size={16} className="animate-spin" />
+          <Button className="mt-6 w-full" disabled={isPending}>
+            <div className="flex items-center gap-x-1">
+              <Loader className="animate-spin" size={16} />
               <p>Loading</p>
             </div>
           </Button>
         ) : (
-          <SubmitButton className="w-full mt-6" data-testid="register-button">
+          <SubmitButton className="mt-6 w-full" data-testid="register-button">
             Join
           </SubmitButton>
         )}
       </form>
-      <span className="text-center text-ui-fg-base text-small-regular mt-6">
-        Already a member?{" "}
+      <span className="mt-6 text-center text-small-regular text-ui-fg-base">
+        Already a member?{' '}
         <button
-          onClick={() => setCurrentView(LOGIN_VIEW.SIGN_IN)}
           className="underline"
+          onClick={() => setCurrentView(LOGIN_VIEW.SIGN_IN)}
         >
           Sign in
         </button>
         .
       </span>
     </div>
-  )
-}
+  );
+};
 
-export default Register
+export default Register;

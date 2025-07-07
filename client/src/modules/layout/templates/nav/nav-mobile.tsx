@@ -1,45 +1,45 @@
-"use client"
+'use client';
 
-import { Menu, X } from "lucide-react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import React from "react"
-import { PRODUCT_CATEGORIES } from "./shared"
+import { Menu, X } from 'lucide-react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import React from 'react';
+import { PRODUCT_CATEGORIES } from './shared';
 
 export default function NavMobile() {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false)
+  const [isOpen, setIsOpen] = React.useState<boolean>(false);
 
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   // whenever we click an item in the menu and navigate away, we want to close the menu
   React.useEffect(() => {
-    setIsOpen(false)
-  }, [pathname])
+    setIsOpen(false);
+  }, [pathname]);
 
   // when we click the path we are currently on, we still want the mobile menu to close,
   // however we cant rely on the pathname for it because that won't change (we're already there)
   const closeOnCurrent = (href: string) => {
     if (pathname === href) {
-      setIsOpen(false)
+      setIsOpen(false);
     }
-  }
+  };
 
   // remove second scrollbar when mobile menu is open
   React.useEffect(() => {
-    if (isOpen) document.body.classList.add("overflow-hidden")
-    else document.body.classList.remove("overflow-hidden")
-  }, [isOpen])
+    if (isOpen) document.body.classList.add('overflow-hidden');
+    else document.body.classList.remove('overflow-hidden');
+  }, [isOpen]);
 
   if (!isOpen)
     return (
       <button
-        type="button"
+        className="-m-2 relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 lg:hidden"
         onClick={() => setIsOpen(true)}
-        className="relative -m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400 lg:hidden"
+        type="button"
       >
-        <Menu className="h-6 w-6" aria-hidden="true" />
+        <Menu aria-hidden="true" className="h-6 w-6" />
       </button>
-    )
+    );
 
   return (
     <div>
@@ -50,13 +50,13 @@ export default function NavMobile() {
       <div className="fixed inset-0 z-40 flex overflow-y-scroll overscroll-y-none">
         <div className="w-4/5">
           <div className="relative flex w-full max-w-sm flex-col overflow-y-auto bg-white pb-12 shadow-xl">
-            <div className="flex px-4 pb-2 pt-5">
+            <div className="flex px-4 pt-5 pb-2">
               <button
-                type="button"
+                className="-m-2 relative inline-flex items-center justify-center rounded-md p-2 text-gray-400"
                 onClick={() => setIsOpen(false)}
-                className="relative -m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400"
+                type="button"
               >
-                <X className="h-6 w-6" aria-hidden="true" />
+                <X aria-hidden="true" className="h-6 w-6" />
               </button>
             </div>
 
@@ -64,12 +64,12 @@ export default function NavMobile() {
               <ul>
                 {PRODUCT_CATEGORIES.map((category) => (
                   <li
+                    className="space-y-10 px-4 pt-10 pb-8"
                     key={category.label}
-                    className="space-y-10 px-4 pb-8 pt-10"
                   >
-                    <div className="border-b border-gray-200">
+                    <div className="border-gray-200 border-b">
                       <div className="-mb-px flex">
-                        <p className="flex-1 whitespace-nowrap border-b-2 border-transparent py-4 text-base font-medium text-gray-900">
+                        <p className="flex-1 whitespace-nowrap border-transparent border-b-2 py-4 font-medium text-base text-gray-900">
                           {category.label}
                         </p>
                       </div>
@@ -97,21 +97,21 @@ export default function NavMobile() {
               </ul>
             </div>
 
-            <div className="space-y-6 border-t border-gray-200 px-4 py-6">
+            <div className="space-y-6 border-gray-200 border-t px-4 py-6">
               <div className="flow-root">
                 <Link
-                  onClick={() => closeOnCurrent("/sign-in")}
-                  href="/sign-in"
                   className="-m-2 block p-2 font-medium text-gray-900"
+                  href="/sign-in"
+                  onClick={() => closeOnCurrent('/sign-in')}
                 >
                   Sign in
                 </Link>
               </div>
               <div className="flow-root">
                 <Link
-                  onClick={() => closeOnCurrent("/sign-up")}
-                  href="/sign-up"
                   className="-m-2 block p-2 font-medium text-gray-900"
+                  href="/sign-up"
+                  onClick={() => closeOnCurrent('/sign-up')}
                 >
                   Sign up
                 </Link>
@@ -121,5 +121,5 @@ export default function NavMobile() {
         </div>
       </div>
     </div>
-  )
+  );
 }

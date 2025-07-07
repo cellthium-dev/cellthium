@@ -1,25 +1,25 @@
-import type { HttpTypes } from "@medusajs/types"
-import { clx } from "@medusajs/ui"
-import type React from "react"
+import type { HttpTypes } from '@medusajs/types';
+import { clx } from '@medusajs/ui';
+import type React from 'react';
 
 type OptionSelectProps = {
-  option: HttpTypes.StoreProductOption
-  current: string | undefined
-  updateOption: (title: string, value: string) => void
-  title: string
-  disabled: boolean
-  "data-testid"?: string
-}
+  option: HttpTypes.StoreProductOption;
+  current: string | undefined;
+  updateOption: (title: string, value: string) => void;
+  title: string;
+  disabled: boolean;
+  'data-testid'?: string;
+};
 
 const OptionSelect: React.FC<OptionSelectProps> = ({
   option,
   current,
   updateOption,
   title,
-  "data-testid": dataTestId,
+  'data-testid': dataTestId,
   disabled,
 }) => {
-  const filteredOptions = (option.values ?? []).map((v) => v.value)
+  const filteredOptions = (option.values ?? []).map((v) => v.value);
 
   return (
     <div className="flex flex-col gap-y-3">
@@ -31,26 +31,26 @@ const OptionSelect: React.FC<OptionSelectProps> = ({
         {filteredOptions.map((v) => {
           return (
             <button
-              onClick={() => updateOption(option.id, v)}
-              key={v}
               className={clx(
-                "border-ui-border-base bg-ui-bg-subtle border text-small-regular h-10 rounded-rounded p-2 flex-1 ",
+                'h-10 flex-1 rounded-rounded border border-ui-border-base bg-ui-bg-subtle p-2 text-small-regular ',
                 {
-                  "border-ui-border-interactive": v === current,
-                  "hover:shadow-elevation-card-rest transition-shadow ease-in-out duration-150":
+                  'border-ui-border-interactive': v === current,
+                  'transition-shadow duration-150 ease-in-out hover:shadow-elevation-card-rest':
                     v !== current,
                 }
               )}
-              disabled={disabled}
               data-testid="option-button"
+              disabled={disabled}
+              key={v}
+              onClick={() => updateOption(option.id, v)}
             >
               {v}
             </button>
-          )
+          );
         })}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default OptionSelect
+export default OptionSelect;

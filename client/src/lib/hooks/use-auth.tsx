@@ -1,9 +1,9 @@
-import { create } from "zustand"
-import { createJSONStorage, persist } from "zustand/middleware"
+import { create } from 'zustand';
+import { createJSONStorage, persist } from 'zustand/middleware';
 
 interface AuthenticationState {
-  readonly authorized: boolean
-  readonly setAuthorized: (authorized: boolean) => void
+  readonly authorized: boolean;
+  readonly setAuthorized: (authorized: boolean) => void;
 }
 
 const useAuthentication = create<AuthenticationState>()(
@@ -13,10 +13,10 @@ const useAuthentication = create<AuthenticationState>()(
       setAuthorized: (authorized: boolean) => set({ authorized }),
     }),
     {
-      name: "authentication-storage",
+      name: 'authentication-storage',
       storage: createJSONStorage(() => sessionStorage),
     }
   )
-)
+);
 
-export default useAuthentication
+export default useAuthentication;

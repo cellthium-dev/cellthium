@@ -1,17 +1,17 @@
-"use client"
+'use client';
 
-import type React from "react"
-import { createContext, useContext } from "react"
+import type React from 'react';
+import { createContext, useContext } from 'react';
 
 interface ModalContext {
-  close: () => void
+  close: () => void;
 }
 
-const ModalContext = createContext<ModalContext | null>(null)
+const ModalContext = createContext<ModalContext | null>(null);
 
 interface ModalProviderProps {
-  children?: React.ReactNode
-  close: () => void
+  children?: React.ReactNode;
+  close: () => void;
 }
 
 export const ModalProvider = ({ children, close }: ModalProviderProps) => {
@@ -23,13 +23,13 @@ export const ModalProvider = ({ children, close }: ModalProviderProps) => {
     >
       {children}
     </ModalContext.Provider>
-  )
-}
+  );
+};
 
 export const useModal = () => {
-  const context = useContext(ModalContext)
+  const context = useContext(ModalContext);
   if (context === null) {
-    throw new Error("useModal must be used within a ModalProvider")
+    throw new Error('useModal must be used within a ModalProvider');
   }
-  return context
-}
+  return context;
+};

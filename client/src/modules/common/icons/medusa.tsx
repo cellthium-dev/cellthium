@@ -1,19 +1,19 @@
-import type React from "react"
+import type React from 'react';
 
-import type { IconProps } from "types/icon"
+import type { IconProps } from 'types/icon';
 
 const Medusa: React.FC<IconProps> = ({
-  size = "20",
-  color = "#9CA3AF",
+  size = '20',
+  color = '#9CA3AF',
   ...attributes
 }) => {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="18"
+      fill="none"
       height="18"
       viewBox="0 0 18 18"
-      fill="none"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
       {...attributes}
     >
       <path
@@ -21,7 +21,7 @@ const Medusa: React.FC<IconProps> = ({
         fill={color}
       />
     </svg>
-  )
-}
+  );
+};
 
-export default Medusa
+export default Medusa;
