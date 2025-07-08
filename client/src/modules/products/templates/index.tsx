@@ -1,14 +1,16 @@
 import type { HttpTypes } from '@medusajs/types';
-import ImageGallery from '@modules/products/components/image-gallery';
-import ProductActions from '@modules/products/components/product-actions';
-import ProductOnboardingCta from '@modules/products/components/product-onboarding-cta';
-import ProductTabs from '@modules/products/components/product-tabs';
-import RelatedProducts from '@modules/products/components/related-products';
-import ProductInfo from '@modules/products/templates/product-info';
-import SkeletonRelatedProducts from '@modules/skeletons/templates/skeleton-related-products';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import type React from 'react';
-import { Suspense } from 'react';
+import {
+  Button,
+  Card,
+  Container,
+  Grid,
+  Heading,
+  Section,
+  Text,
+} from '@/components/ui/design-system';
 import ProductActionsWrapper from './product-actions-wrapper';
 
 type ProductTemplateProps = {
@@ -28,40 +30,72 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
 
   return (
     <>
-      <div
-        className="relative flex flex-col py-6 content-container small:flex-row small:items-start"
-        data-testid="product-container"
-      >
-        <div className="flex w-full flex-col gap-y-6 py-8 small:sticky small:top-48 small:max-w-[300px] small:py-0">
-          <ProductInfo product={product} />
-          <ProductTabs product={product} />
-        </div>
-        <div className="relative block w-full">
-          <ImageGallery images={product?.images || []} />
-        </div>
-        <div className="flex w-full flex-col gap-y-12 py-8 small:sticky small:top-48 small:max-w-[300px] small:py-0">
-          <ProductOnboardingCta />
-          <Suspense
-            fallback={
-              <ProductActions
-                disabled={true}
-                product={product}
-                region={region}
+      <Section className="bg-brand-light pt-24 pb-12">
+        <Container>
+          <Grid className="items-center" cols={2}>
+            <div className="space-y-6">
+              <Heading level="hero">{product.title}</Heading>
+              <Text variant="body-lg">{product.subtitle}</Text>
+              <ProductActionsWrapper id={product.id} region={region} />
+            </div>
+            <div className="flex justify-center">
+              <Image
+                alt={product.title || 'Product Image'}
+                className="rounded-lg shadow-lg"
+                height={500}
+                src={product.thumbnail || '/images/hero-placeholder.png'}
+                width={500}
               />
-            }
-          >
-            <ProductActionsWrapper id={product.id} region={region} />
-          </Suspense>
-        </div>
-      </div>
-      <div
-        className="my-16 content-container small:my-32"
-        data-testid="related-products-container"
-      >
-        <Suspense fallback={<SkeletonRelatedProducts />}>
-          <RelatedProducts countryCode={countryCode} product={product} />
-        </Suspense>
-      </div>
+            </div>
+          </Grid>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container>
+          <Heading className="text-center" level="section">
+            Key Features
+          </Heading>
+          <Grid className="mt-12" cols={3}>
+            <Card>
+              <Heading level="subsection">Feature One</Heading>
+              <Text>Description of the first key feature.</Text>
+            </Card>
+            <Card>
+              <Heading level="subsection">Feature Two</Heading>
+              <Text>Description of the second key feature.</Text>
+            </Card>
+            <Card>
+              <Heading level="subsection">Feature Three</Heading>
+              <Text>Description of the third key feature.</Text>
+            </Card>
+          </Grid>
+        </Container>
+      </Section>
+
+      {/* Placeholder for Product Comparison Section */}
+      <Section className="bg-gray-50">
+        <Container>
+          <Heading className="text-center" level="section">
+            Product Comparison
+          </Heading>
+          <div className="mt-12 text-center">
+            <Text>Comparison table will be implemented here.</Text>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Placeholder for DIY Components Section */}
+      <Section>
+        <Container>
+          <Heading className="text-center" level="section">
+            DIY Components
+          </Heading>
+          <div className="mt-12 text-center">
+            <Text>DIY components will be showcased here.</Text>
+          </div>
+        </Container>
+      </Section>
     </>
   );
 };
