@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import MaxWidthWrapper from '@/_components/max-width-wrapper';
+import MaxWidthWrapper from '@/components/max-width-wrapper';
 
 export default function AboutUsPage() {
   return (

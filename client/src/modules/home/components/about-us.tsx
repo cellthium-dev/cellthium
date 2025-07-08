@@ -4,7 +4,7 @@ import HorizontalScrollCarousel from '@modules/animation/horizontal-scroll-carou
 import { CheckCircle, ShieldCheck, Unplug } from 'lucide-react';
 import Image from 'next/image';
 import type React from 'react';
-import { Badge } from '@/_components/ui/badge';
+import { Badge } from '@/components/ui/badge';
 
 type AboutUsProps = React.HTMLAttributes<HTMLDivElement>;
 

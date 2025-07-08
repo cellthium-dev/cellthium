@@ -2,14 +2,14 @@
 
 import type { StoreCustomer } from '@medusajs/types';
 import { useRouter } from 'next/navigation';
-import { Button } from '@/_components/ui/button';
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@/_components/ui/dropdown-menu';
+} from '@/components/ui/dropdown-menu';
 
 export default function NavUserAccount({ user }: { user: StoreCustomer }) {
   const router = useRouter();

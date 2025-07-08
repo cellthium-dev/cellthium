@@ -8,7 +8,7 @@ import LocalizedClientLink from '@modules/common/components/localized-client-lin
 import { Loader } from 'lucide-react';
 import { useSearchParams } from 'next/navigation';
 import { useServerAction } from 'zsa-react';
-import { Button, buttonVariants } from '@/_components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
 import useRedirectWithCounter from './useCounter';
 
 type TResetPasswordParams = {

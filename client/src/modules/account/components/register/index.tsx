@@ -10,7 +10,7 @@ import LocalizedClientLink from '@modules/common/components/localized-client-lin
 import { Loader } from 'lucide-react';
 import type React from 'react';
 import { useServerAction } from 'zsa-react';
-import { Button } from '@/_components/ui/button';
+import { Button } from '@/components/ui/button';
 
 type Props = {
   setCurrentView: (view: LOGIN_VIEW) => void;

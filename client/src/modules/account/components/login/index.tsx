@@ -10,8 +10,8 @@ import { redirect, useRouter } from 'next/navigation';
 import type React from 'react';
 import { FaGoogle } from 'react-icons/fa';
 import { useServerAction } from 'zsa-react';
-import { Button } from '@/_components/ui/button';
-import { Separator } from '@/_components/ui/separator';
+import { Button } from '@/components/ui/button';
+import { Icons } from '@/components/icons';
 
 type Props = {
   setCurrentView: (view: LOGIN_VIEW) => void;

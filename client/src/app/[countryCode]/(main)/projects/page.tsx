@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import MaxWidthWrapper from '@/_components/max-width-wrapper';
-import { Separator } from '@/_components/ui/separator';
+import MaxWidthWrapper from '@/components/max-width-wrapper';
+import { Separator } from '@/components/ui/separator';
 
 export default function ProjectsPage() {
   return (

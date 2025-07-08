@@ -2,7 +2,7 @@
 
 import type React from 'react';
 import { useFormStatus } from 'react-dom';
-import { Button } from '@/_components/ui/button';
+import { Button } from '@/components/ui/button';
 
 export function SubmitButton({
   children,

@@ -6,8 +6,8 @@ import CartMismatchBanner from '@modules/layout/components/cart-mismatch-banner'
 import NavBar from '@modules/layout/templates/nav/nav-bar';
 import FreeShippingPriceNudge from '@modules/shipping/components/free-shipping-price-nudge';
 import type { Metadata } from 'next';
-import Chat from '@/_components/chats/chat';
-import Footer from '@/_components/footer';
+import Chat from '@/components/chats/chat';
+import Footer from '@/components/footer';
 
 export const metadata: Metadata = {
   metadataBase: new URL(getBaseURL()),

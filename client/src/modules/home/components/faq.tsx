@@ -5,8 +5,8 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/_components/ui/accordion';
-import { Button } from '@/_components/ui/button';
+} from '@/components/ui/accordion';
+import { Button } from '@/components/ui/button';
 
 const faqs = [
   {

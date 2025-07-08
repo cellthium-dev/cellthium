@@ -3,7 +3,7 @@
 import { cn } from '@lib/utils';
 import Link from 'next/link';
 import React from 'react';
-import { Icons } from '@/_components/icons';
+import { Icons } from '@/components/icons';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -12,7 +12,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from '@/_components/ui/navigation-menu';
+} from '@/components/ui/navigation-menu';
 
 const products: { title: string; href: string; description: string }[] = [
   {
