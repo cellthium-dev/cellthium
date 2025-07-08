@@ -1,0 +1,4 @@
+packages:
+  - 'client'
+  - 'server'
+  # - 'request'  # Uncomment if you want to include API testing tools in workspace

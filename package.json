@@ -1,0 +1,56 @@
+{
+  "name": "@cellthium.labs/workspace",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Cellthium v2 - Modular battery pack e-commerce platform",
+  "author": "Felix Arjuna",
+  "license": "MIT",
+  "keywords": [
+    "workspace",
+    "monorepo",
+    "ecommerce",
+    "battery",
+    "medusa",
+    "nextjs",
+    "typescript"
+  ],
+  "scripts": {
+    "dev": "pnpm run --parallel dev",
+    "dev:client": "pnpm --filter client dev",
+    "dev:server": "pnpm --filter server dev",
+    "build": "pnpm run --recursive build",
+    "build:client": "pnpm --filter client build",
+    "build:server": "pnpm --filter server build",
+    "start": "pnpm run --parallel start",
+    "start:client": "pnpm --filter client start",
+    "start:server": "pnpm --filter server start",
+    "lint": "pnpm run --recursive lint",
+    "lint:client": "pnpm --filter client lint",
+    "format": "pnpm run --recursive format",
+    "format:client": "pnpm --filter client format",
+    "clean": "pnpm run --recursive clean",
+    "install:all": "pnpm install",
+    "postinstall": "echo '✅ All dependencies installed successfully!'",
+    "seed": "pnpm --filter server seed",
+    "test": "pnpm run --recursive test",
+    "test:server": "pnpm --filter server test:unit",
+    "test:integration": "pnpm --filter server test:integration:http"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.0.6",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.6.2",
+    "ultracite": "5.0.32"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  },
+  "packageManager": "pnpm@10.5.2",
+  "pnpm": {
+    "overrides": {
+      "@types/react": "npm:types-react@19.0.0-rc.1",
+      "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
+    }
+  }
+}
