@@ -75,7 +75,7 @@ export default function AboutUs({ className }: AboutUsProps) {
     >
       <div className="grid gap-4 lg:grid-cols-3">
         <div className="flex flex-col gap-4">
-          <Badge className="h-10 w-fit font-mono text-base uppercase">
+          <Badge className="h-10 w-fit rounded-md font-mono text-base uppercase">
             Founded
           </Badge>
           <span className="text-8xl">
@@ -88,7 +88,7 @@ export default function AboutUs({ className }: AboutUsProps) {
           </p>
         </div>
         <div className="flex flex-col gap-4">
-          <Badge className="h-10 w-fit font-mono text-base uppercase">
+          <Badge className="h-10 w-fit rounded-md font-mono text-base uppercase">
             Reduced footprint
           </Badge>
           <div>
@@ -103,7 +103,7 @@ export default function AboutUs({ className }: AboutUsProps) {
           </p>
         </div>
         <div className="flex flex-col gap-4">
-          <Badge className="h-10 w-fit font-mono text-base uppercase">
+          <Badge className="h-10 w-fit rounded-md font-mono text-base uppercase">
             Capacity
           </Badge>
           <div>
@@ -143,11 +143,11 @@ export default function AboutUs({ className }: AboutUsProps) {
           </div>
           <p className="sticky top-56 h-fit p-8 text-right text-2xl">
             Our battery modules use{' '}
-            <span className="border-green-400 border-b-2 font-mono text-xl tracking-tight">
+            <span className="border-primary border-b-2 font-mono text-xl tracking-tight">
               lithium-nickel-manganese-cobalt
             </span>{' '}
             <code className="font-bold">NMC</code> and{' '}
-            <span className="border-green-400 border-b-2 font-mono text-xl tracking-tight">
+            <span className="border-primary border-b-2 font-mono text-xl tracking-tight">
               lithium-iron-phosphate
             </span>{' '}
             <code className="font-bold">

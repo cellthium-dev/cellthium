@@ -28,7 +28,7 @@ export default function FAQ() {
   return (
     <section className="space-y-4 py-20">
       <h1 className="font-bold text-3xl">
-        <span className="text-green-600">Frequently Asked</span> Questions
+        <span className="text-primary">Frequently Asked</span> Questions
       </h1>
 
       <Accordion collapsible type="single">

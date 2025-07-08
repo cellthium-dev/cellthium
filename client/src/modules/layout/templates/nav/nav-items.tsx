@@ -2,7 +2,7 @@
 
 import { cn } from '@lib/utils';
 import Link from 'next/link';
-import React from 'react';
+import type React from 'react';
 import { Icons } from '@/components/icons';
 import {
   NavigationMenu,
@@ -39,7 +39,7 @@ const products: { title: string; href: string; description: string }[] = [
 
 export default function NavItems() {
   return (
-    <div className="flex h-full items-center text-brand-primary uppercase">
+    <div className="flex h-full items-center text-primary uppercase">
       <NavigationMenu>
         <NavigationMenuList className="lg:flex lg:gap-x-8 ">
           <NavigationMenuItem>
@@ -54,7 +54,7 @@ export default function NavItems() {
                       className="flex h-full w-full select-none flex-col justify-end rounded-md bg-linear-to-b from-muted/50 to-muted p-6 no-underline outline-hidden focus:shadow-md"
                       href="/"
                     >
-                      <Icons.logo className="h-6 w-6" />
+                      <Icons.logo className="h-12 w-auto" />
                       <div className="mt-4 mb-2 font-medium text-lg">
                         Cellthium
                       </div>
@@ -124,28 +124,22 @@ export default function NavItems() {
   );
 }
 
-const ListItem = React.forwardRef<
-  React.ElementRef<'a'>,
-  React.ComponentPropsWithoutRef<'a'>
->(({ className, title, children, ...props }, ref) => {
+function ListItem({
+  title,
+  children,
+  href,
+  ...props
+}: React.ComponentPropsWithoutRef<'li'> & { href: string }) {
   return (
-    <li>
+    <li {...props}>
       <NavigationMenuLink asChild>
-        <a
-          className={cn(
-            'group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-hidden transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
-            className
-          )}
-          ref={ref}
-          {...props}
-        >
+        <Link href={href}>
           <div className="font-medium text-sm leading-none">{title}</div>
-          <p className="line-clamp-2 text-muted-foreground text-sm leading-snug group-hover:text-blue-200">
+          <p className="line-clamp-2 text-muted-foreground text-sm leading-snug">
             {children}
           </p>
-        </a>
+        </Link>
       </NavigationMenuLink>
     </li>
   );
-});
-ListItem.displayName = 'ListItem';
+}

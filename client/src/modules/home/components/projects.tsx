@@ -35,25 +35,25 @@ export function ProjectCard() {
           <div className="grid-cols-2 space-y-2">
             <div className="flex flex-col items-end">
               <p className="text-xl">96V</p>
-              <h3 className="w-fit rounded-xl bg-green-900 px-2 py-0 text-green-100 text-sm">
+              <h3 className="w-fit rounded-xl bg-primary px-2 py-0 text-green-100 text-sm">
                 Voltage
               </h3>
             </div>
             <div className="flex flex-col items-end">
               <p className="text-xl">170km</p>
-              <h3 className="w-fit rounded-xl bg-green-900 px-2 py-0 text-green-100 text-sm">
+              <h3 className="w-fit rounded-xl bg-primary px-2 py-0 text-green-100 text-sm">
                 Range
               </h3>
             </div>
             <div className="flex flex-col items-end">
               <p className="text-xl">135km/h</p>
-              <h3 className="w-fit rounded-xl bg-green-900 px-2 py-0 text-green-100 text-sm">
+              <h3 className="w-fit rounded-xl bg-primary px-2 py-0 text-green-100 text-sm">
                 Top speed
               </h3>
             </div>
             <div className="flex flex-col items-end">
               <p className="text-xl">7Hours</p>
-              <h3 className="w-fit rounded-xl bg-green-900 px-2 py-0 text-green-100 text-sm">
+              <h3 className="w-fit rounded-xl bg-primary px-2 py-0 text-green-100 text-sm">
                 Capacity
               </h3>
             </div>

@@ -127,7 +127,7 @@ export default function ChatInput({ className, ...props }: ChatInputProps) {
 
         <div
           aria-hidden="true"
-          className="absolute inset-x-0 bottom-0 border-gray-300 border-t peer-focus:border-green-600 peer-focus:border-t-2"
+          className="absolute inset-x-0 bottom-0 border-gray-300 border-t peer-focus:border-primary peer-focus:border-t-2"
         />
       </div>
     </div>

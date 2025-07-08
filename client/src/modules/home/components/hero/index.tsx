@@ -27,9 +27,9 @@ export default function Hero() {
           </div>
           <div className="text-center">
             <h1 className="font-normal text-5xl tracking-tight">
-              Modular and highly customizeable{' '}
-              <span className="bg-green-400 font-mono">green</span> batteries
-              for the blue planet.
+              Modular and highly customizeable green batteries for the{' '}
+              <span className="rounded-md bg-primary/20 font-mono">blue</span>{' '}
+              planet.
             </h1>
             <p className="mt-6 text-gray-600 text-normal ">
               Unrivaled battery systems that are scalable, secure, easy to

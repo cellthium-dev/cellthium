@@ -4,7 +4,7 @@ export default function TermsOfUsePage() {
   return (
     <div style={{ scrollBehavior: 'smooth' }}>
       <MaxWidthWrapper className="flex min-h-screen space-x-12 py-24">
-        <div className="grow space-y-4 px-12 text-primary">
+        <div className="grow space-y-4 px-12">
           <h1 className="text-6xl ">Terms of Use</h1>
           <div className="mt-8 space-y-8">
             <h2 className="text-2xl" id="1-general">
@@ -255,7 +255,7 @@ export default function TermsOfUsePage() {
           <ul className="space-y-2 text-sm">
             <li>
               <a
-                className="transition-colors hover:text-blue-400"
+                className="transition-colors hover:text-primary"
                 href="#1-general"
               >
                 § 1 – General
@@ -263,7 +263,7 @@ export default function TermsOfUsePage() {
             </li>
             <li>
               <a
-                className="transition-colors hover:text-blue-400"
+                className="transition-colors hover:text-primary"
                 href="#2-your-agreement-and-acceptance"
               >
                 § 2 – Your Agreement and Acceptance
@@ -271,7 +271,7 @@ export default function TermsOfUsePage() {
             </li>
             <li>
               <a
-                className="transition-colors hover:text-blue-400"
+                className="transition-colors hover:text-primary"
                 href="#3-website-access-and-usage"
               >
                 § 3 – Website Access and Usage
@@ -279,7 +279,7 @@ export default function TermsOfUsePage() {
             </li>
             <li>
               <a
-                className="transition-colors hover:text-blue-400"
+                className="transition-colors hover:text-primary"
                 href="#4-general-warranty-and-disclaimer"
               >
                 § 4 – General Warranty and Disclaimer
@@ -287,7 +287,7 @@ export default function TermsOfUsePage() {
             </li>
             <li>
               <a
-                className="transition-colors hover:text-blue-400"
+                className="transition-colors hover:text-primary"
                 href="#5-consumer-rights-and-information-duties"
               >
                 § 5 – Consumer Rights and Information Duties
@@ -295,7 +295,7 @@ export default function TermsOfUsePage() {
             </li>
             <li>
               <a
-                className="transition-colors hover:text-blue-400"
+                className="transition-colors hover:text-primary"
                 href="#6-imprint-and-contact-information"
               >
                 § 6 – Imprint and Contact Information
@@ -303,7 +303,7 @@ export default function TermsOfUsePage() {
             </li>
             <li>
               <a
-                className="transition-colors hover:text-blue-400"
+                className="transition-colors hover:text-primary"
                 href="#7-data-protection-and-privacy"
               >
                 § 7 – Data Protection and Privacy
@@ -311,7 +311,7 @@ export default function TermsOfUsePage() {
             </li>
             <li>
               <a
-                className="transition-colors hover:text-blue-400"
+                className="transition-colors hover:text-primary"
                 href="#8-indemnity"
               >
                 § 8 – Indemnity
@@ -319,7 +319,7 @@ export default function TermsOfUsePage() {
             </li>
             <li>
               <a
-                className="transition-colors hover:text-blue-400"
+                className="transition-colors hover:text-primary"
                 href="#9-assignment-and-modification"
               >
                 § 9 – Assignment and Modification
@@ -327,7 +327,7 @@ export default function TermsOfUsePage() {
             </li>
             <li>
               <a
-                className="transition-colors hover:text-blue-400"
+                className="transition-colors hover:text-primary"
                 href="#10-limitation-of-liability"
               >
                 § 10 – Limitation of Liability
@@ -335,7 +335,7 @@ export default function TermsOfUsePage() {
             </li>
             <li>
               <a
-                className="transition-colors hover:text-blue-400"
+                className="transition-colors hover:text-primary"
                 href="#11-legal-advisory"
               >
                 § 11 – Legal Advisory
@@ -343,7 +343,7 @@ export default function TermsOfUsePage() {
             </li>
             <li>
               <a
-                className="transition-colors hover:text-blue-400"
+                className="transition-colors hover:text-primary"
                 href="#12-severability-and-waiver"
               >
                 § 12 – Severability and Waiver

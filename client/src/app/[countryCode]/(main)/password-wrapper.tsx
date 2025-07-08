@@ -41,8 +41,11 @@ export default function PasswordWrapper() {
             <Button
               className="mt-4 w-full"
               onClick={() => {
-                if (password === PASSWORD) setAuthorized(true);
-                else toast.error('Authentication failed.');
+                if (password === PASSWORD) {
+                  setAuthorized(true);
+                } else {
+                  toast.error('Authentication failed.');
+                }
               }}
             >
               Login

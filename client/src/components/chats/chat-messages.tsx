@@ -43,7 +43,7 @@ export default function ChatMessages({
               >
                 <p
                   className={cn('rounded-lg px-4 py-2', {
-                    'bg-green-600 text-white': message.role === 'user',
+                    'bg-primary text-primary-foreground': message.role === 'user',
                     'bg-gray-200 text-gray-900': message.role === 'system',
                   })}
                 >

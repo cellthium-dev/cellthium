@@ -4,7 +4,7 @@ export default function TermsOfServicePage() {
   return (
     <div style={{ scrollBehavior: 'smooth' }}>
       <MaxWidthWrapper className="flex min-h-screen space-x-12 py-24">
-        <div className="grow space-y-4 px-12 text-primary">
+        <div className="grow space-y-4 px-12">
           <h1 className="text-6xl ">Terms of Service</h1>
           <div className="mt-8 space-y-8">
             <h2 className="text-2xl" id="1-introduction">
@@ -524,7 +524,7 @@ export default function TermsOfServicePage() {
           <ul className="space-y-2 text-sm">
             <li>
               <a
-                className="transition-colors hover:text-blue-400"
+                className="transition-colors hover:text-primary"
                 href="#1-introduction"
               >
                 1. Introduction
@@ -532,7 +532,7 @@ export default function TermsOfServicePage() {
             </li>
             <li>
               <a
-                className="transition-colors hover:text-blue-400"
+                className="transition-colors hover:text-primary"
                 href="#2-general-service-terms"
               >
                 2. General Service Terms
@@ -540,7 +540,7 @@ export default function TermsOfServicePage() {
             </li>
             <li>
               <a
-                className="transition-colors hover:text-blue-400"
+                className="transition-colors hover:text-primary"
                 href="#3-customer-use-of-the-services"
               >
                 3. Customer Use of the Services
@@ -548,7 +548,7 @@ export default function TermsOfServicePage() {
             </li>
             <li>
               <a
-                className="transition-colors hover:text-blue-400"
+                className="transition-colors hover:text-primary"
                 href="#4-intellectual-property-rights"
               >
                 4. Intellectual Property Rights
@@ -556,7 +556,7 @@ export default function TermsOfServicePage() {
             </li>
             <li>
               <a
-                className="transition-colors hover:text-blue-400"
+                className="transition-colors hover:text-primary"
                 href="#5-data-security-disclosure"
               >
                 5. Data Security & Disclosure
@@ -564,7 +564,7 @@ export default function TermsOfServicePage() {
             </li>
             <li>
               <a
-                className="transition-colors hover:text-blue-400"
+                className="transition-colors hover:text-primary"
                 href="#6-service-specific-terms-conditions"
               >
                 6. Service-Specific Terms & Conditions
@@ -572,7 +572,7 @@ export default function TermsOfServicePage() {
             </li>
             <li>
               <a
-                className="transition-colors hover:text-blue-400"
+                className="transition-colors hover:text-primary"
                 href="#7-fees-payment"
               >
                 7. Fees & Payment
@@ -580,7 +580,7 @@ export default function TermsOfServicePage() {
             </li>
             <li>
               <a
-                className="transition-colors hover:text-blue-400"
+                className="transition-colors hover:text-primary"
                 href="#8-term-and-termination"
               >
                 8. Term and Termination
@@ -588,7 +588,7 @@ export default function TermsOfServicePage() {
             </li>
             <li>
               <a
-                className="transition-colors hover:text-blue-400"
+                className="transition-colors hover:text-primary"
                 href="#9-disclaimers"
               >
                 9. Disclaimers
@@ -596,7 +596,7 @@ export default function TermsOfServicePage() {
             </li>
             <li>
               <a
-                className="transition-colors hover:text-blue-400"
+                className="transition-colors hover:text-primary"
                 href="#10-indemnity"
               >
                 10. Indemnity
@@ -604,7 +604,7 @@ export default function TermsOfServicePage() {
             </li>
             <li>
               <a
-                className="transition-colors hover:text-blue-400"
+                className="transition-colors hover:text-primary"
                 href="#11-limitation-of-liability"
               >
                 11. Limitation of Liability
@@ -612,7 +612,7 @@ export default function TermsOfServicePage() {
             </li>
             <li>
               <a
-                className="transition-colors hover:text-blue-400"
+                className="transition-colors hover:text-primary"
                 href="#12-arbitration"
               >
                 12. Arbitration
@@ -620,7 +620,7 @@ export default function TermsOfServicePage() {
             </li>
             <li>
               <a
-                className="transition-colors hover:text-blue-400"
+                className="transition-colors hover:text-primary"
                 href="#13-miscellaneous"
               >
                 13. Miscellaneous
@@ -628,7 +628,7 @@ export default function TermsOfServicePage() {
             </li>
             <li>
               <a
-                className="transition-colors hover:text-blue-400"
+                className="transition-colors hover:text-primary"
                 href="#14-definitions"
               >
                 14. Definitions

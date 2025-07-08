@@ -36,8 +36,8 @@ export default function HorizontalScrollCarousel() {
                 className="flex flex-col items-center justify-center gap-8 p-12 text-center"
                 key={index}
               >
-                <appliance.icon className="h-20 w-20" />
-                <p className="flex h-32 w-96 items-center justify-center bg-green-400 px-4 font-mono text-5xl uppercase">
+                <appliance.icon className="h-16 w-16 text-primary" />
+                <p className="flex h-24 w-48 items-center justify-center rounded-md bg-primary/30 px-4 font-mono text-xl uppercase">
                   {appliance.name}
                 </p>
               </div>

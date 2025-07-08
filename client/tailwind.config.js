@@ -19,53 +19,45 @@ module.exports = {
         padding: 'padding-top padding-right padding-bottom padding-left',
       },
       colors: {
-        // Cellthium brand colors
-        brand: {
-          primary: '#023B5E', // Main brand blue
-          secondary: '#1E3A8A', // Secondary blue
-          accent: '#06B6D4', // Cyan accent
-          light: '#F0F9FF', // Light blue background
-          dark: '#0C1A2E', // Dark blue
-        },
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
         card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))',
+          DEFAULT: 'var(--card)',
+          foreground: 'var(--card-foreground)',
         },
         popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))',
+          DEFAULT: 'var(--popover)',
+          foreground: 'var(--popover-foreground)',
         },
         primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
+          DEFAULT: 'var(--primary)',
+          foreground: 'var(--primary-foreground)',
         },
         secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
+          DEFAULT: 'var(--secondary)',
+          foreground: 'var(--secondary-foreground)',
         },
         muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))',
+          DEFAULT: 'var(--muted)',
+          foreground: 'var(--muted-foreground)',
         },
         accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
+          DEFAULT: 'var(--accent)',
+          foreground: 'var(--accent-foreground)',
         },
         destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))',
+          DEFAULT: 'var(--destructive)',
+          foreground: 'var(--destructive-foreground)',
         },
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
+        border: 'var(--border)',
+        input: 'var(--input)',
+        ring: 'var(--ring)',
         chart: {
-          1: 'hsl(var(--chart-1))',
-          2: 'hsl(var(--chart-2))',
-          3: 'hsl(var(--chart-3))',
-          4: 'hsl(var(--chart-4))',
-          5: 'hsl(var(--chart-5))',
+          1: 'var(--chart-1)',
+          2: 'var(--chart-2)',
+          3: 'var(--chart-3)',
+          4: 'var(--chart-4)',
+          5: 'var(--chart-5)',
         },
       },
       borderRadius: {
