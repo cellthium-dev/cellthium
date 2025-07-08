@@ -186,7 +186,7 @@ export default function AboutUs({ className }: AboutUsProps) {
               className="col-span-1 text-center md:flex md:items-start md:text-left lg:block lg:text-center"
               key={value.name}
             >
-              <div className="flex justify-center md:flex-shrink-0">
+              <div className="flex justify-center md:shrink-0">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full text-gray-600 ring-1 ring-gray-900 hover:ring-gray-900/50">
                   {<value.Icon className="h-5 w-5" />}
                 </div>

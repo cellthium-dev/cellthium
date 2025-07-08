@@ -10,7 +10,7 @@ export default function Footer() {
   const pathsToMinimize = ['/verify-email', '/sign-up', '/sign-in'];
 
   return (
-    <footer className="flex-grow-0 bg-white">
+    <footer className="grow-0 bg-white">
       <MaxWidthWrapper>
         <div className="border-gray-200 border-t">
           {pathsToMinimize.includes(pathname) ? null : (

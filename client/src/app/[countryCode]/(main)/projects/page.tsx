@@ -4,7 +4,7 @@ import { Separator } from '@/components/ui/separator';
 
 export default function ProjectsPage() {
   return (
-    <MaxWidthWrapper className="min-h-screen space-y-24 p-12 text-[#023B5E]">
+    <MaxWidthWrapper className="min-h-screen space-y-24 p-12 text-brand-primary">
       <div className="flex space-x-8">
         <h1 className="my-8 text-6xl uppercase">
           Customized Battery Modules for your{' '}
@@ -36,7 +36,7 @@ export default function ProjectsPage() {
           />
           <div>
             <h2 className="font-bold text-xl">FLEXIBLE SOLUTIONS</h2>
-            <Separator className="h-[2px] bg-[#023B5E]" />
+            <Separator className="h-[2px] bg-brand-primary" />
             <p className="mt-4">Our battery modules can be used everywhere.</p>
           </div>
         </div>
@@ -51,7 +51,7 @@ export default function ProjectsPage() {
           />
           <div>
             <h2 className="font-bold text-xl">INDIVIDUALIZED AND RELIABLE</h2>
-            <Separator className="h-[2px] bg-[#023B5E]" />
+            <Separator className="h-[2px] bg-brand-primary" />
             <p className="mt-4">
               Our solutions meet the specific needs and preferences of our
               customers.
@@ -69,7 +69,7 @@ export default function ProjectsPage() {
           />
           <div>
             <h2 className="font-bold text-xl">UNIQUE</h2>
-            <Separator className="h-[2px] bg-[#023B5E]" />
+            <Separator className="h-[2px] bg-brand-primary" />
             <p className="mt-4">
               Our products are unique and stand out from the crowd thanks to
               their special features.

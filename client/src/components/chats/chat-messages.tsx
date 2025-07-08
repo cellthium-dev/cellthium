@@ -23,7 +23,7 @@ export default function ChatMessages({
         className
       )}
     >
-      <div className="flex-1 flex-grow" />
+      <div className="flex-1 grow" />
       {inverseMessages.map((message) => {
         return (
           <div className="chat-message" key={`${message.id}-${message.id}`}>

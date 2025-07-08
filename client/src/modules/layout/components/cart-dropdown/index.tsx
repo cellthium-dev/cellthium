@@ -76,7 +76,7 @@ const CartDropdown = ({
 
   return (
     <div
-      className="z-50 h-full text-[#023B5E]"
+      className="z-50 h-full text-brand-primary"
       onMouseEnter={openAndCancel}
       onMouseLeave={close}
     >
@@ -137,7 +137,7 @@ const CartDropdown = ({
                         <div className="flex flex-1 flex-col justify-between">
                           <div className="flex flex-1 flex-col">
                             <div className="flex items-start justify-between">
-                              <div className="mr-4 flex w-[180px] flex-col overflow-ellipsis whitespace-nowrap">
+                              <div className="mr-4 flex w-[180px] flex-col text-ellipsis whitespace-nowrap">
                                 <h3 className="overflow-hidden text-ellipsis text-base-regular">
                                   <LocalizedClientLink
                                     data-testid="product-link"

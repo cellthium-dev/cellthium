@@ -28,7 +28,7 @@ const Summary = ({ cart }: SummaryProps) => {
 
   return (
     <div className="flex flex-col gap-y-4">
-      <Heading className="text-[2rem] leading-[2.75rem]" level="h2">
+      <Heading className="text-[2rem] leading-11" level="h2">
         Summary
       </Heading>
       <DiscountCode cart={cart} />

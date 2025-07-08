@@ -104,7 +104,7 @@ const Login = ({ setCurrentView }: Props) => {
         <Button
           disabled={isPending}
           onClick={async () => await execute()}
-          variant={'outline'}
+          variant={'outline-solid'}
         >
           {isPending ? (
             <div className="flex items-center gap-2">

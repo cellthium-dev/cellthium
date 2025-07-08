@@ -174,14 +174,14 @@ function FreeShippingInline({
         <div className="flex justify-between gap-1">
           <div
             className={clx(
-              'h-1 max-w-full rounded-full bg-gradient-to-r from-zinc-400 to-zinc-500 duration-500 ease-in-out',
+              'h-1 max-w-full rounded-full bg-linear-to-r from-zinc-400 to-zinc-500 duration-500 ease-in-out',
               {
                 'from-green-400 to-green-500': price.target_reached,
               }
             )}
             style={{ width: `${price.remaining_percentage}%` }}
           />
-          <div className="h-1 w-fit flex-grow rounded-full bg-neutral-300" />
+          <div className="h-1 w-fit grow rounded-full bg-neutral-300" />
         </div>
       </div>
     </div>
@@ -210,7 +210,7 @@ function FreeShippingPopup({
     >
       <div>
         <Button
-          className="rounded-full border-none bg-neutral-900 p-2 text-[15px] shadow-none outline-none"
+          className="rounded-full border-none bg-neutral-900 p-2 text-[15px] shadow-none outline-hidden"
           onClick={() => setIsClosed(true)}
         >
           <XMark />
@@ -250,28 +250,28 @@ function FreeShippingPopup({
             <div className="flex justify-between gap-1">
               <div
                 className={clx(
-                  'h-1.5 max-w-full rounded-full bg-gradient-to-r from-zinc-400 to-zinc-500 duration-500 ease-in-out',
+                  'h-1.5 max-w-full rounded-full bg-linear-to-r from-zinc-400 to-zinc-500 duration-500 ease-in-out',
                   {
                     'from-green-400 to-green-500': price.target_reached,
                   }
                 )}
                 style={{ width: `${price.remaining_percentage}%` }}
               />
-              <div className="h-1.5 w-fit flex-grow rounded-full bg-zinc-600" />
+              <div className="h-1.5 w-fit grow rounded-full bg-zinc-600" />
             </div>
           </div>
         </div>
 
         <div className="flex gap-3">
           <LocalizedClientLink
-            className="rounded-2xl border-[1px] border-white bg-transparent px-4 py-2.5 text-[15px] shadow-none outline-none"
+            className="rounded-2xl border border-white bg-transparent px-4 py-2.5 text-[15px] shadow-none outline-hidden"
             href="/cart"
           >
             View cart
           </LocalizedClientLink>
 
           <LocalizedClientLink
-            className="flex-grow rounded-2xl border-[1px] border-white bg-white px-4 py-2.5 text-center text-[15px] text-neutral-950 shadow-none outline-none"
+            className="grow rounded-2xl border border-white bg-white px-4 py-2.5 text-center text-[15px] text-neutral-950 shadow-none outline-hidden"
             href="/store"
           >
             View products

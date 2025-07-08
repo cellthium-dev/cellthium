@@ -186,7 +186,7 @@ Diese Anfrage würde normalerweise an unser Vertriebsteam weitergeleitet werden.
   return (
     <div className="min-h-screen bg-brand-light">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-brand-primary to-brand-secondary text-white">
+      <div className="bg-linear-to-br from-brand-primary to-brand-secondary text-white">
         <div className="section-container content-container">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
@@ -200,8 +200,8 @@ Diese Anfrage würde normalerweise an unser Vertriebsteam weitergeleitet werden.
               </p>
             </div>
             <div className="flex justify-center">
-              <div className="w-full max-w-md rounded-2xl border border-white/20 bg-white/10 p-8 backdrop-blur-sm">
-                <div className="flex aspect-square items-center justify-center rounded-xl bg-gradient-to-br from-brand-accent to-cyan-400">
+              <div className="w-full max-w-md rounded-2xl border border-white/20 bg-white/10 p-8 backdrop-blur-xs">
+                <div className="flex aspect-square items-center justify-center rounded-xl bg-linear-to-br from-brand-accent to-cyan-400">
                   <Battery className="h-32 w-32 text-white" />
                 </div>
               </div>
@@ -251,7 +251,7 @@ Diese Anfrage würde normalerweise an unser Vertriebsteam weitergeleitet werden.
                     'Kompaktes Design',
                   ].map((feature) => (
                     <li className="flex items-center gap-3" key={feature}>
-                      <CheckCircle className="h-5 w-5 flex-shrink-0 text-brand-accent" />
+                      <CheckCircle className="h-5 w-5 shrink-0 text-brand-accent" />
                       <span className="text-sm">{feature}</span>
                     </li>
                   ))}
@@ -259,7 +259,7 @@ Diese Anfrage würde normalerweise an unser Vertriebsteam weitergeleitet werden.
                 <Button
                   className="w-full"
                   variant={
-                    config.moduleType === 'power' ? 'default' : 'outline'
+                    config.moduleType === 'power' ? 'default' : 'outline-solid'
                   }
                 >
                   Power-Module wählen
@@ -299,7 +299,7 @@ Diese Anfrage würde normalerweise an unser Vertriebsteam weitergeleitet werden.
                     'Kosteneffizient',
                   ].map((feature) => (
                     <li className="flex items-center gap-3" key={feature}>
-                      <CheckCircle className="h-5 w-5 flex-shrink-0 text-brand-accent" />
+                      <CheckCircle className="h-5 w-5 shrink-0 text-brand-accent" />
                       <span className="text-sm">{feature}</span>
                     </li>
                   ))}
@@ -307,7 +307,7 @@ Diese Anfrage würde normalerweise an unser Vertriebsteam weitergeleitet werden.
                 <Button
                   className="w-full"
                   variant={
-                    config.moduleType === 'energy' ? 'default' : 'outline'
+                    config.moduleType === 'energy' ? 'default' : 'outline-solid'
                   }
                 >
                   Energy-Module wählen
@@ -451,7 +451,7 @@ Diese Anfrage würde normalerweise an unser Vertriebsteam weitergeleitet werden.
                           </div>
                         </div>
 
-                        <div className="rounded-lg bg-gradient-to-r from-brand-primary to-brand-secondary p-4 text-center text-white">
+                        <div className="rounded-lg bg-linear-to-r from-brand-primary to-brand-secondary p-4 text-center text-white">
                           <div className="mb-1 text-sm opacity-90">
                             Geschätzte Kosten
                           </div>

@@ -3,7 +3,7 @@ import MaxWidthWrapper from '@/components/max-width-wrapper';
 
 export default function AboutUsPage() {
   return (
-    <MaxWidthWrapper className="min-h-screen space-y-24 px-12 py-24 text-[#023B5E]">
+    <MaxWidthWrapper className="min-h-screen space-y-24 px-12 py-24 text-brand-primary">
       <div className="space-y-8">
         <h1 className="text-6xl">
           Our mission: A decarbonized future for the{' '}

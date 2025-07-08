@@ -39,7 +39,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         )}
         <div className="txt-compact-medium relative z-0 flex w-full">
           <input
-            className="mt-0 block h-11 w-full appearance-none rounded-md border border-ui-border-base bg-ui-bg-field px-4 pt-4 pb-1 hover:bg-ui-bg-field-hover focus:shadow-borders-interactive-with-active focus:outline-none focus:ring-0"
+            className="mt-0 block h-11 w-full appearance-none rounded-md border border-ui-border-base bg-ui-bg-field px-4 pt-4 pb-1 hover:bg-ui-bg-field-hover focus:shadow-borders-interactive-with-active focus:outline-hidden focus:ring-0"
             name={name}
             placeholder=" "
             required={required}
@@ -57,7 +57,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           </label>
           {type === 'password' && (
             <button
-              className="absolute top-3 right-0 px-4 text-ui-fg-subtle outline-none transition-all duration-150 focus:text-ui-fg-base focus:outline-none"
+              className="absolute top-3 right-0 px-4 text-ui-fg-subtle outline-hidden transition-all duration-150 focus:text-ui-fg-base focus:outline-hidden"
               onClick={() => setShowPassword(!showPassword)}
               type="button"
             >

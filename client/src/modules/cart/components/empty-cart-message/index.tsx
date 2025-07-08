@@ -14,7 +14,7 @@ const EmptyCartMessage = () => {
       >
         Cart
       </Heading>
-      <Text className="mt-4 mb-6 max-w-[32rem] text-base-regular">
+      <Text className="mt-4 mb-6 max-w-lg text-base-regular">
         You don&apos;t have anything in your cart. Let&apos;s change that, use
         the link below to start browsing our products.
       </Text>

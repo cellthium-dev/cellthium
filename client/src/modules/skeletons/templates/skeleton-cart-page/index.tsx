@@ -26,7 +26,7 @@ const SkeletonCartPage = () => {
               <Table>
                 <Table.Header className="border-t-0">
                   <Table.Row>
-                    <Table.HeaderCell className="!pl-0">
+                    <Table.HeaderCell className="pl-0!">
                       <div className="h-6 w-10 animate-pulse bg-gray-200" />
                     </Table.HeaderCell>
                     <Table.HeaderCell />
@@ -36,7 +36,7 @@ const SkeletonCartPage = () => {
                     <Table.HeaderCell>
                       <div className="h-6 w-12 animate-pulse bg-gray-200" />
                     </Table.HeaderCell>
-                    <Table.HeaderCell className="!pr-0">
+                    <Table.HeaderCell className="pr-0!">
                       <div className="flex justify-end">
                         <div className="h-6 w-12 animate-pulse bg-gray-200" />
                       </div>

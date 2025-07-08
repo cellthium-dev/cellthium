@@ -14,7 +14,7 @@ export function SubmitButton({
   variant?:
     | 'default'
     | 'destructive'
-    | 'outline'
+    | 'outline-solid'
     | 'secondary'
     | 'ghost'
     | 'link'

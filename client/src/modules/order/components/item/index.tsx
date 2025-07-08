@@ -14,7 +14,7 @@ type ItemProps = {
 const Item = ({ item, currencyCode }: ItemProps) => {
   return (
     <Table.Row className="w-full" data-testid="product-row">
-      <Table.Cell className="!pl-0 w-24 p-4">
+      <Table.Cell className="pl-0! w-24 p-4">
         <div className="flex w-16">
           <Thumbnail size="square" thumbnail={item.thumbnail} />
         </div>
@@ -30,8 +30,8 @@ const Item = ({ item, currencyCode }: ItemProps) => {
         <LineItemOptions data-testid="product-variant" variant={item.variant} />
       </Table.Cell>
 
-      <Table.Cell className="!pr-0">
-        <span className="!pr-0 flex h-full flex-col items-end justify-center">
+      <Table.Cell className="pr-0!">
+        <span className="pr-0! flex h-full flex-col items-end justify-center">
           <span className="flex gap-x-1 ">
             <Text className="text-ui-fg-muted">
               <span data-testid="product-quantity">{item.quantity}</span>x{' '}

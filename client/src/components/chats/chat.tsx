@@ -13,7 +13,7 @@ import ChatMessages from './chat-messages';
 export default function Chat() {
   return (
     <Accordion
-      className="relative z-40 bg-white shadow"
+      className="relative z-40 bg-white shadow-sm"
       collapsible
       type="single"
     >

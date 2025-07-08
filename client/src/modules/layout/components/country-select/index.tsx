@@ -99,7 +99,7 @@ const CountrySelect = ({ toggleState, regions }: CountrySelectProps) => {
             show={state}
           >
             <ListboxOptions
-              className="-bottom-[calc(100%-36px)] no-scrollbar absolute xsmall:right-0 left-0 xsmall:left-auto z-[900] max-h-[442px] w-full overflow-y-scroll rounded-rounded bg-white text-black text-small-regular uppercase drop-shadow-md"
+              className="-bottom-[calc(100%-36px)] no-scrollbar absolute xsmall:right-0 left-0 xsmall:left-auto z-900 max-h-[442px] w-full overflow-y-scroll rounded-rounded bg-white text-black text-small-regular uppercase drop-shadow-md"
               static
             >
               {options?.map((o, index) => {

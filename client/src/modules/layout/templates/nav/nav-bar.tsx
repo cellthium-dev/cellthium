@@ -34,7 +34,7 @@ export default async function Navbar() {
             <div className="ml-auto flex items-center">
               <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                 <LocalizedClientLink
-                  className={'text-[#023B5E] text-base uppercase'}
+                  className={'text-brand-primary text-base uppercase'}
                   href="/account"
                 >
                   Account

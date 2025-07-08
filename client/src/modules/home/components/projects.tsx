@@ -8,7 +8,7 @@ export default function Projects() {
       <div className="flex flex-col space-y-16">
         <h1 className="font-bold text-3xl">
           Our{' '}
-          <span className="bg-gradient-to-r from-green-600 to-green-500 bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-green-600 to-green-500 bg-clip-text text-transparent">
             Projects
           </span>
         </h1>

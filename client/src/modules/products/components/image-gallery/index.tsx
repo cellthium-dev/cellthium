@@ -13,7 +13,7 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
         {images.map((image, index) => {
           return (
             <Container
-              className="relative aspect-[29/34] w-full overflow-hidden bg-ui-bg-subtle"
+              className="relative aspect-29/34 w-full overflow-hidden bg-ui-bg-subtle"
               id={image.id}
               key={image.id}
             >

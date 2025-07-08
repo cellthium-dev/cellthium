@@ -53,7 +53,7 @@ const NativeSelect = forwardRef<HTMLSelectElement, NativeSelectProps>(
             defaultValue={defaultValue}
             ref={innerRef}
             {...props}
-            className="flex-1 appearance-none border-none bg-transparent px-4 py-2.5 outline-none transition-colors duration-150 "
+            className="flex-1 appearance-none border-none bg-transparent px-4 py-2.5 outline-hidden transition-colors duration-150 "
           >
             <option disabled value="">
               {placeholder}

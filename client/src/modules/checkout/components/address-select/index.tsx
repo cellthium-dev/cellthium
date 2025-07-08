@@ -35,7 +35,7 @@ const AddressSelect = ({
     <Listbox onChange={handleSelect} value={selectedAddress?.id}>
       <div className="relative">
         <Listbox.Button
-          className="relative flex w-full cursor-default items-center justify-between rounded-rounded border bg-white px-4 py-[10px] text-left text-base-regular focus:outline-none focus-visible:border-gray-300 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-300"
+          className="relative flex w-full cursor-default items-center justify-between rounded-rounded border bg-white px-4 py-[10px] text-left text-base-regular focus:outline-hidden focus-visible:border-gray-300 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-300"
           data-testid="shipping-address-select"
         >
           {({ open }) => (
@@ -60,7 +60,7 @@ const AddressSelect = ({
           leaveTo="opacity-0"
         >
           <Listbox.Options
-            className="absolute z-20 max-h-60 w-full overflow-auto border border-top-0 bg-white text-small-regular focus:outline-none sm:text-sm"
+            className="absolute z-20 max-h-60 w-full overflow-auto border border-top-0 bg-white text-small-regular focus:outline-hidden sm:text-sm"
             data-testid="shipping-address-options"
           >
             {addresses.map((address) => {

@@ -4,7 +4,7 @@ export default function TermsOfUsePage() {
   return (
     <div style={{ scrollBehavior: 'smooth' }}>
       <MaxWidthWrapper className="flex min-h-screen space-x-12 py-24">
-        <div className="flex-grow space-y-4 px-12 text-primary">
+        <div className="grow space-y-4 px-12 text-primary">
           <h1 className="text-6xl ">Terms of Use</h1>
           <div className="mt-8 space-y-8">
             <h2 className="text-2xl" id="1-general">

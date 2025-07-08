@@ -87,10 +87,10 @@ export default function ChatInput({ className, ...props }: ChatInputProps) {
 
   return (
     <div {...props} className={cn('border-zinc-300 border-t', className)}>
-      <div className="relative mt-4 flex-1 overflow-hidden rounded-lg border-none outline-none">
+      <div className="relative mt-4 flex-1 overflow-hidden rounded-lg border-none outline-hidden">
         <TextareaAutosize
           autoFocus
-          className="peer block w-full resize-none scroll-smooth bg-zinc-100 px-3 py-1.5 pr-14 text-gray-900 text-sm outline-none disabled:opacity-50 sm:leading-6"
+          className="peer block w-full resize-none scroll-smooth bg-zinc-100 px-3 py-1.5 pr-14 text-gray-900 text-sm outline-hidden disabled:opacity-50 sm:leading-6"
           disabled={isPending}
           maxRows={4}
           onChange={(e: { target: { value: SetStateAction<string> } }) =>

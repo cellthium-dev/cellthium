@@ -30,7 +30,7 @@ export default function BlueBoxPage() {
         <div className="mt-8">
           <img
             alt="Hochwertiges Aluminium-Batteriegehäuse mit Bluebox Siegel"
-            className="mx-auto rounded-lg shadow-sm"
+            className="mx-auto rounded-lg shadow-xs"
             src="https://pplx-res.cloudinary.com/image/upload/v1751898222/gpt4o_images/xibadulbrljsibtycyse.png"
           />
         </div>
