@@ -1,4 +1,4 @@
-[ ] Move _components into components under app folder
+[x] Move _components into components under app folder
 [ ] Update Terms of Service and Terms of Use
 Source: 
 https://drive.google.com/drive/folders/1WmSAe0oSiKUTgkEcuvksjGotbqYU0yS7
