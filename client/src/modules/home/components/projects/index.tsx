@@ -1,11 +1,25 @@
 'use client';
 
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, TriangleAlert } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import MaxWidthWrapper from '@/components/max-width-wrapper';
 import { Button } from '@/components/ui/button';
+
+type ProductType = 'energy' | 'power';
+type EnergyModule = { name: string; capacity: string; price: string };
+
+type PowerModule = {
+  name: string;
+  power: string;
+  price: string;
+};
+
+type ProductDictionary = {
+  energy: EnergyModule[];
+  power: PowerModule[];
+};
 
 export default function ProjectPage() {
   const [currentDetail, setCurrentDetail] = useState('overview');
@@ -51,11 +65,8 @@ export default function ProjectPage() {
     }
   };
 
-  const showProductConfigModal = (
-    type: 'energy' | 'power',
-    typeName: string
-  ) => {
-    const products = {
+  const showProductConfigModal = (type: ProductType, typeName: string) => {
+    const products: ProductDictionary = {
       energy: [
         { name: 'Bluebox 774 Energy', capacity: '7.74 kWh', price: '3.080 €' },
         { name: 'Bluebox 619 Energy', capacity: '6.19 kWh', price: '2.480 €' },
@@ -68,7 +79,12 @@ export default function ProjectPage() {
 
     const productList = products[type]
       .map((product) => {
-        const spec = type === 'energy' ? product.capacity : product.power;
+        let spec: string;
+        if (type === 'energy') {
+          spec = (product as EnergyModule).capacity;
+        } else {
+          spec = (product as PowerModule).power;
+        }
         return `• ${product.name}: ${spec} - ab ${product.price}`;
       })
       .join('\n');
@@ -143,116 +159,120 @@ export default function ProjectPage() {
 
   return (
     <>
-      {/* Hero Section */}
-      <header className="bg-gradient-to-br from-primary to-primary-hover py-32 text-primary-foreground">
-        <MaxWidthWrapper className="container mx-auto px-4">
-          <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
-            <div className="text-center md:text-left">
-              <div className="mb-4 flex flex-wrap justify-center gap-4 md:justify-start">
-                <span className="rounded-md bg-primary-foreground px-3 py-1 font-medium text-primary text-sm">
-                  TÜV-Zertifiziert
-                </span>
-                <span className="rounded-md bg-primary-foreground px-3 py-1 font-medium text-primary text-sm">
-                  Straßenzulassung
-                </span>
+      <div className="bg-gradient-to-b from-primary-hover to-primary/10">
+        {/* Hero Section */}
+        <header className="py-32 text-primary">
+          <MaxWidthWrapper className="container mx-auto px-4">
+            <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
+              <div className="text-center md:text-left">
+                <div className="mb-4 flex flex-wrap justify-center gap-4 md:justify-start">
+                  <span className="rounded-md bg-primary-foreground px-3 py-1 font-medium text-primary text-sm">
+                    TÜV-Zertifiziert
+                  </span>
+                  <span className="rounded-md bg-primary-foreground px-3 py-1 font-medium text-primary text-sm">
+                    Straßenzulassung
+                  </span>
+                </div>
+                <h1 className="mb-3 font-bold text-4xl md:text-5xl">
+                  BMW 315E Elektroretrofit
+                </h1>
+                <p className="mb-6 text-lg opacity-90">
+                  Vom Verbrenner zum Elektromotor – Ein erfolgreiches
+                  Referenzprojekt mit DIY-Batteriemodulnen und offizieller
+                  TÜV-Einzelbetriebserlaubnis
+                </p>
+                <div className="mb-6 flex flex-wrap justify-center gap-6 md:justify-start">
+                  <div className="text-center">
+                    <span className="block font-bold text-2xl">12.8 kWh</span>
+                    <span className="text-sm opacity-80">
+                      Batteriekapazität
+                    </span>
+                  </div>
+                  <div className="text-center">
+                    <span className="block font-bold text-2xl">4 Module</span>
+                    <span className="text-sm opacity-80">DIY Blueboxen</span>
+                  </div>
+                  <div className="text-center">
+                    <span className="block font-bold text-2xl">3.25 kW</span>
+                    <span className="text-sm opacity-80">AC-Ladeleistung</span>
+                  </div>
+                </div>
+                <div className="flex flex-wrap justify-center gap-4 md:justify-start">
+                  <Button
+                    className="rounded-lg bg-primary-foreground px-6 py-3 font-medium text-primary transition-colors hover:bg-gray-100"
+                    onClick={() => scrollToSection('konfigurator')}
+                  >
+                    Eigenes DIY-Kit konfigurieren
+                  </Button>
+                  <Button
+                    className="rounded-lg px-6 py-3 font-medium text-primary-foreground transition-colors hover:bg-primary-foreground hover:text-primary"
+                    onClick={() => scrollToSection('technische-details')}
+                  >
+                    Technische Details ansehen
+                  </Button>
+                </div>
               </div>
-              <h1 className="mb-3 font-bold text-4xl md:text-5xl">
-                BMW 315E Elektroretrofit
-              </h1>
-              <p className="mb-6 text-lg opacity-90">
-                Vom Verbrenner zum Elektromotor – Ein erfolgreiches
-                Referenzprojekt mit DIY-Batteriemodulnen und offizieller
-                TÜV-Einzelbetriebserlaubnis
-              </p>
-              <div className="mb-6 flex flex-wrap justify-center gap-6 md:justify-start">
-                <div className="text-center">
-                  <span className="block font-bold text-2xl">12.8 kWh</span>
-                  <span className="text-sm opacity-80">Batteriekapazität</span>
+              <div className="relative flex items-center justify-center">
+                <Image
+                  alt="BMW 315E Elektroretrofit mit professioneller Batteriesystem-Integration"
+                  className="h-auto w-full max-w-sm rounded-lg shadow-lg md:max-w-md lg:max-w-lg"
+                  height={2000}
+                  src="/images/bmw-hero.png"
+                  width={1000}
+                />
+                <div className="absolute right-8 bottom-4 flex items-center gap-2 rounded-full bg-background px-3 py-1 text-foreground shadow-md">
+                  <CheckCircle2 className="w-5 text-primary" />
+                  <div>
+                    <p className="font-bold">TÜV-Zertifiziert</p>
+                    <span className="text-xs">Einzelbetriebserlaubnis</span>
+                  </div>
                 </div>
-                <div className="text-center">
-                  <span className="block font-bold text-2xl">4 Module</span>
-                  <span className="text-sm opacity-80">DIY Blueboxen</span>
-                </div>
-                <div className="text-center">
-                  <span className="block font-bold text-2xl">3.25 kW</span>
-                  <span className="text-sm opacity-80">AC-Ladeleistung</span>
-                </div>
-              </div>
-              <div className="flex flex-wrap justify-center gap-4 md:justify-start">
-                <Button
-                  className="rounded-lg bg-primary-foreground px-6 py-3 font-medium text-primary transition-colors hover:bg-gray-100"
-                  onClick={() => scrollToSection('konfigurator')}
-                >
-                  Eigenes DIY-Kit konfigurieren
-                </Button>
-                <Button
-                  className="rounded-lg border border-primary-foreground px-6 py-3 font-medium text-primary-foreground transition-colors hover:bg-primary-foreground hover:text-primary"
-                  onClick={() => scrollToSection('technische-details')}
-                >
-                  Technische Details ansehen
-                </Button>
               </div>
             </div>
-            <div className="relative flex items-center justify-center">
-              <Image
-                alt="BMW 315E Elektroretrofit mit professioneller Batteriesystem-Integration"
-                className="h-auto w-full max-w-sm rounded-lg shadow-lg md:max-w-md lg:max-w-lg"
-                height={2000}
-                src="/images/bmw-hero.png"
-                width={1000}
-              />
-              <div className="absolute right-8 bottom-4 flex items-center gap-2 rounded-full bg-background px-3 py-1 text-foreground shadow-md">
-                <CheckCircle2 className="w-5 text-primary" />
-                <div>
-                  <p className="font-bold">TÜV-Zertifiziert</p>
-                  <span className="text-xs">Einzelbetriebserlaubnis</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </MaxWidthWrapper>
-      </header>
+          </MaxWidthWrapper>
+        </header>
 
-      {/* Project Overview Section */}
-      <section className="py-32" id="projekt-uebersicht">
-        <MaxWidthWrapper className="container mx-auto px-4">
-          <h2 className="mb-6 text-center font-semibold text-3xl">
-            Projekt-Übersicht: Erfolgreiche Fahrzeug-Elektrifizierung
-          </h2>
-          <div className="mt-6 grid grid-cols-1 gap-20 md:grid-cols-3">
-            <div className="rounded-lg border border-card-border bg-surface p-6 shadow-sm">
-              <h3 className="mb-3 font-semibold text-primary text-xl">
-                Herausforderung
-              </h3>
-              <p className="text-muted-foreground">
-                Umrüstung eines BMW 315 von Verbrenner- auf Elektroantrieb mit
-                normenkonformer Integration von DIY-Batteriemodulnen und
-                erfolgreicher TÜV-Zulassung.
-              </p>
+        {/* Project Overview Section */}
+        <section className="py-32" id="projekt-uebersicht">
+          <MaxWidthWrapper className="container mx-auto grid gap-y-2 px-4">
+            <h2 className="mb-6 text-center text-3xl ">
+              Projekt-Übersicht: Erfolgreiche Fahrzeug-Elektrifizierung
+            </h2>
+            <div className="mt-6 grid grid-cols-1 gap-20 md:grid-cols-3 ">
+              <div className="rounded-lg bg-white/20 p-6 shadow-sm backdrop-blur-md">
+                <h3 className="mb-3 font-semibold text-primary text-xl">
+                  Herausforderung
+                </h3>
+                <p>
+                  Umrüstung eines BMW 315 von Verbrenner- auf Elektroantrieb mit
+                  normenkonformer Integration von DIY-Batteriemodulnen und
+                  erfolgreicher TÜV-Zulassung.
+                </p>
+              </div>
+              <div className="rounded-lg bg-white/20 p-6 shadow-sm backdrop-blur-md">
+                <h3 className="mb-3 font-semibold text-primary text-xl">
+                  Lösung
+                </h3>
+                <p className="text-muted-foreground">
+                  4x DIY-Batteriemodule strategisch platziert (2x Motorraum, 2x
+                  Kofferraum), Bluetooth-BMS, CCS Typ2-Ladeanschluss und
+                  professionelle Hochvolt-Verkabelung.
+                </p>
+              </div>
+              <div className="rounded-lg bg-white/20 p-6 shadow-sm backdrop-blur-md">
+                <h3 className="mb-3 font-semibold text-primary text-xl">
+                  Ergebnis
+                </h3>
+                <p>
+                  Straßenzugelassener BMW 315E mit 12.8 kWh Batteriekapazität,
+                  3.25 kW Ladeleistung und vollständiger
+                  TÜV-Einzelbetriebserlaubnis (EBE).
+                </p>
+              </div>
             </div>
-            <div className="rounded-lg border border-card-border bg-surface p-6 shadow-sm">
-              <h3 className="mb-3 font-semibold text-primary text-xl">
-                Lösung
-              </h3>
-              <p className="text-muted-foreground">
-                4x DIY-Batteriemodule strategisch platziert (2x Motorraum, 2x
-                Kofferraum), Bluetooth-BMS, CCS Typ2-Ladeanschluss und
-                professionelle Hochvolt-Verkabelung.
-              </p>
-            </div>
-            <div className="rounded-lg border border-card-border bg-surface p-6 shadow-sm">
-              <h3 className="mb-3 font-semibold text-primary text-xl">
-                Ergebnis
-              </h3>
-              <p className="text-muted-foreground">
-                Straßenzugelassener BMW 315E mit 12.8 kWh Batteriekapazität,
-                3.25 kW Ladeleistung und vollständiger
-                TÜV-Einzelbetriebserlaubnis (EBE).
-              </p>
-            </div>
-          </div>
-        </MaxWidthWrapper>
-      </section>
+          </MaxWidthWrapper>
+        </section>
+      </div>
 
       {/* Interactive Battery System Section */}
       <section className="bg-secondary py-32" id="batteriesystem">
@@ -718,7 +738,9 @@ export default function ProjectPage() {
 
           {/* Warning */}
           <div className="mt-6 flex gap-4 rounded-lg border border-yellow-300 bg-yellow-100 p-5">
-            <div className="text-3xl text-yellow-600">⚠️</div>
+            <div className="text-3xl text-yellow-600">
+              <TriangleAlert className="w-6" />
+            </div>
             <div>
               <h4 className="mb-1 font-semibold text-lg">
                 Wichtiger Sicherheitshinweis
