@@ -67,6 +67,9 @@ export default function NavItems() {
                 <ListItem href="/about-us" title="Our Mission">
                   A little introduction about Cellthium's mission.
                 </ListItem>
+                <ListItem href="/about-us/bluebox" title="BlueBox">
+                  Learn about our innovative BlueBox battery solutions.
+                </ListItem>
                 <ListItem href="/application" title="Applications">
                   Applications of our batteries.
                 </ListItem>

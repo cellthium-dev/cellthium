@@ -3,7 +3,8 @@
 import { cn } from '@lib/utils';
 import { type HTMLAttributes, useContext } from 'react';
 import { MessagesContext } from './context/useMessageContext';
-import MarkdownLite from './markdown-lite';
+
+// import MarkdownLite from './markdown-lite';
 
 type ChatMessagesProps = HTMLAttributes<HTMLDivElement>;
 
@@ -46,7 +47,7 @@ export default function ChatMessages({
                     'bg-gray-200 text-gray-900': message.role === 'system',
                   })}
                 >
-                  <MarkdownLite text={message.content} />
+                  {/* <MarkdownLite text={message.content} /> */}
                 </p>
               </div>
             </div>
