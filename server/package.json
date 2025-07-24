@@ -1,7 +1,7 @@
 {
-  "name": "server",
+  "name": "@cellthium/server",
   "version": "0.0.1",
-  "private": true,
+  "description": "A starter for Medusa projects.",
   "author": "Felix Arjuna",
   "license": "MIT",
   "keywords": [
@@ -18,26 +18,23 @@
     "start": "medusa start",
     "dev": "medusa develop",
     "test:integration:http": "TEST_TYPE=integration:http NODE_OPTIONS=--experimental-vm-modules jest --silent=false --runInBand --forceExit",
-    "test:integration:modules": "TEST_TYPE=integration:modules NODE_OPTIONS=--experimental-vm-modules jest --silent --runInBand --forceExit",
+    "test:integration:modules": "TEST_TYPE=integration:modules NODE_OPTIONS=--experimental-vm-modules jest --silent=false --runInBand --forceExit",
     "test:unit": "TEST_TYPE=unit NODE_OPTIONS=--experimental-vm-modules jest --silent --runInBand --forceExit"
   },
   "dependencies": {
-    "@medusajs/admin-sdk": "2.5.1",
-    "@medusajs/cli": "2.5.1",
-    "@medusajs/framework": "2.5.1",
-    "@medusajs/medusa": "2.5.1",
+    "@medusajs/admin-sdk": "2.8.8",
+    "@medusajs/cli": "2.8.8",
+    "@medusajs/framework": "2.8.8",
+    "@medusajs/medusa": "2.8.8",
     "@mikro-orm/core": "6.4.3",
     "@mikro-orm/knex": "6.4.3",
     "@mikro-orm/migrations": "6.4.3",
     "@mikro-orm/postgresql": "6.4.3",
     "awilix": "^8.0.1",
-    "medusa-plugin-auth": "^1.11.1",
-    "pg": "^8.13.0",
-    "resend": "^4.1.2"
+    "pg": "^8.13.0"
   },
   "devDependencies": {
-    "@flydotio/dockerfile": "^0.7.10",
-    "@medusajs/test-utils": "2.5.1",
+    "@medusajs/test-utils": "2.8.8",
     "@mikro-orm/cli": "6.4.3",
     "@swc/core": "1.5.7",
     "@swc/jest": "^0.2.36",
