@@ -23,7 +23,7 @@ jobs:
     defaults:
       run:
         working-directory: ./server
-    
+
     services:
       postgres:
         image: postgres:15
@@ -38,41 +38,36 @@ jobs:
           --health-retries 5
         ports:
           - 5432:5432
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: latest
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'pnpm'
-          cache-dependency-path: pnpm-lock.yaml
+          cache: 'yarn'
+          cache-dependency-path: yarn.lock
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: yarn install --frozen-lockfile
 
       - name: Build application
-        run: pnpm run build
+        run: yarn run build
 
       - name: Run unit tests
-        run: pnpm run test:unit
+        run: yarn run test:unit
         env:
           DATABASE_URL: postgres://postgres:postgres@localhost:5432/medusa_test
 
       - name: Run integration tests (modules)
-        run: pnpm run test:integration:modules
+        run: yarn run test:integration:modules
         env:
           DATABASE_URL: postgres://postgres:postgres@localhost:5432/medusa_test
 
       - name: Run integration tests (HTTP)
-        run: pnpm run test:integration:http
+        run: yarn run test:integration:http
         env:
           DATABASE_URL: postgres://postgres:postgres@localhost:5432/medusa_test
 
